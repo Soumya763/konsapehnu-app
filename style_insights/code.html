@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Style Insights - Konsa Pehnu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#764200",
+                        "sandstone": "#c9c4b9",
+                        "surface-container-highest": "#e5e2db",
+                        "error-container": "#ffdad6",
+                        "primary": "#5c051d",
+                        "primary-fixed-dim": "#ffb2ba",
+                        "secondary-fixed": "#ffdcbf",
+                        "primary-fixed": "#ffd9dc",
+                        "surface-variant": "#e5e2db",
+                        "secondary-fixed-dim": "#ffb874",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "tertiary": "#531600",
+                        "on-surface": "#1c1c18",
+                        "on-tertiary-fixed": "#380c00",
+                        "surface-bright": "#fcf9f2",
+                        "surface-dim": "#dcdad3",
+                        "surface-container-high": "#ebe8e1",
+                        "inverse-on-surface": "#f3f0e9",
+                        "inverse-surface": "#31312c",
+                        "on-secondary-fixed": "#2d1600",
+                        "secondary-container": "#feb064",
+                        "emerald-match": "#0b6e4f",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#792400",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c18",
+                        "cream-container": "#f3eee4",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ff9068",
+                        "hairline": "#d8d0c2",
+                        "on-primary": "#ffffff",
+                        "secondary": "#8b5007",
+                        "surface-tint": "#a03c4d",
+                        "on-secondary-fixed-variant": "#6a3b00",
+                        "tertiary-fixed": "#ffdbcf",
+                        "indigo-slate": "#243746",
+                        "primary-container": "#7a1f32",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "outline": "#887173",
+                        "on-primary-fixed-variant": "#812437",
+                        "surface-container-low": "#f6f3ec",
+                        "on-surface-variant": "#554243",
+                        "on-primary-fixed": "#400011",
+                        "on-primary-container": "#ff8b9b",
+                        "surface-container": "#f0eee7",
+                        "surface": "#fcf9f2",
+                        "outline-variant": "#dbc0c2",
+                        "ink": "#3E2723"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "margin-mobile": "5vw",
+                        "unit": "4px",
+                        "margin-desktop": "5vw",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lead": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "stat-price": ["Playfair Display"],
+                        "body-base": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "title-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lead": ["18px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "stat-price": ["42px", { "lineHeight": "1.0", "letterSpacing": "-1px", "fontWeight": "500" }],
+                        "body-base": ["15px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "headline-md": ["25px", { "lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm flex justify-between items-center px-margin-mobile h-16 max-w-7xl mx-auto md:hidden">
+<button aria-label="Menu" class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md italic text-secondary dark:text-secondary-fixed">Konsa Pehnu</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-hairline flex items-center justify-center">
+<!-- Simulated avatar via icon -->
+<span class="material-symbols-outlined text-sm text-on-surface-variant">person</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-32 px-margin-mobile flex flex-col gap-lg max-w-lg mx-auto w-full md:hidden">
+<!-- Header -->
+<header>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Style Insights</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">Your personal sartorial journal and metrics.</p>
+</header>
+<!-- Style Archetype Card -->
+<section class="bg-cream-container border border-hairline rounded-xl p-lg shadow-[0_4px_24px_rgba(168,137,82,0.05)] relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+<!-- Decorative Ambient Glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-secondary mb-sm block uppercase">Archetype</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-md leading-tight">Classic<br/>Indo-Western</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md max-w-[85%]">
+                    You favor timeless silhouettes accented with tactile Indian textiles. A refined balance of structured tailoring and fluid drapes.
+                </p>
+<div class="flex flex-wrap gap-sm">
+<span class="px-sm py-xs rounded-full border border-sandstone font-label-caps text-[10px] text-ink bg-surface-container-lowest/50 hover:bg-ink hover:text-white transition-colors cursor-default">Minimalist</span>
+<span class="px-sm py-xs rounded-full border border-sandstone font-label-caps text-[10px] text-ink bg-surface-container-lowest/50 hover:bg-ink hover:text-white transition-colors cursor-default">Earthy Tones</span>
+<span class="px-sm py-xs rounded-full border border-sandstone font-label-caps text-[10px] text-ink bg-surface-container-lowest/50 hover:bg-ink hover:text-white transition-colors cursor-default">Tailored</span>
+</div>
+</div>
+</section>
+<!-- Analytics Bento Grid -->
+<section class="grid grid-cols-2 gap-sm">
+<!-- Total Value -->
+<div class="col-span-2 bg-surface-container-lowest border border-hairline rounded-xl p-lg flex flex-col items-center justify-center text-center shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-sm uppercase tracking-widest">Est. Wardrobe Value</span>
+<span class="font-stat-price text-stat-price text-primary">₹1,24,500</span>
+</div>
+<!-- Item Count -->
+<div class="bg-surface-container-lowest border border-hairline rounded-xl p-md flex flex-col justify-between shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-md uppercase">Total Items</span>
+<div class="flex items-end justify-between">
+<span class="font-headline-md text-headline-md text-on-surface leading-none">142</span>
+<span class="material-symbols-outlined text-secondary opacity-80" style="font-variation-settings: 'FILL' 0;">checkroom</span>
+</div>
+</div>
+<!-- Cost Per Wear -->
+<div class="bg-surface-container-lowest border border-hairline rounded-xl p-md flex flex-col justify-between shadow-[0_2px_12px_rgba(0,0,0,0.02)] relative overflow-hidden">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-md uppercase relative z-10">Avg. CPW</span>
+<div class="flex items-end justify-between relative z-10">
+<span class="font-headline-md text-headline-md text-on-surface leading-none">₹340</span>
+<span class="material-symbols-outlined text-emerald-match bg-emerald-match/10 rounded-full p-1 text-[16px]">trending_down</span>
+</div>
+<!-- Subtle background graph hint -->
+<div class="absolute bottom-0 left-0 w-full h-1/2 opacity-10 pointer-events-none" style="background: linear-gradient(to top right, transparent 49%, var(--emerald-match) 50%, transparent 51%); background-size: 20px 20px;"></div>
+</div>
+</section>
+<!-- Composition Bars -->
+<section class="bg-surface-container-lowest border border-hairline rounded-xl p-md shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+<h4 class="font-title-md text-title-md text-on-surface mb-md">Wardrobe Composition</h4>
+<div class="flex flex-col gap-md">
+<!-- Bar 1 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Everyday Essentials</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">45%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Bar 2 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Formal &amp; Occasion</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">35%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-1000 ease-out delay-100" style="width: 35%;"></div>
+</div>
+</div>
+<!-- Bar 3 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Active &amp; Lounge</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">20%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-sandstone rounded-full transition-all duration-1000 ease-out delay-200" style="width: 20%;"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-md pb-safe bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-xl border-t border-hairline dark:border-outline-variant shadow-lg z-50 rounded-t-[1.5rem] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../today_s_look/code.html">
+<span class="material-symbols-outlined mb-1 text-[22px]">home</span>
+<span class="font-label-caps text-[9px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined mb-1 text-[22px]">dry_cleaning</span>
+<span class="font-label-caps text-[9px]">Wardrobe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../ai_stylist_chat/code.html">
+<span class="material-symbols-outlined mb-1 text-[22px]">smart_toy</span>
+<span class="font-label-caps text-[9px]">Stylist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../styling_by_occasion/code.html">
+<span class="material-symbols-outlined mb-1 text-[22px]">checkroom</span>
+<span class="font-label-caps text-[9px]">Outfits</span>
+</a>
+<!-- Active Tab: Profile (Maps to Insights conceptually) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-cream-container dark:bg-primary-container rounded-full px-4 py-1.5 hover:text-secondary dark:hover:text-secondary-fixed transition-all scale-95 duration-200 min-w-[64px] h-14" href="../style_insights/code.html">
+<span class="material-symbols-outlined mb-0.5 text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps text-[9px] font-bold">Profile</span>
+</a>
+</nav>
+<!-- Safe area padding for iOS devices -->
+<style>
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 16px);
+        }
+    </style>
+</body></html>

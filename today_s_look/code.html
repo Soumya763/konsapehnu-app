@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Konsa Pehnu - Today's Outfit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fcf9f2",
+                    "on-tertiary-fixed": "#380c00",
+                    "primary": "#5c051d",
+                    "surface-variant": "#e5e2db",
+                    "on-background": "#1c1c18",
+                    "background": "#fcf9f2",
+                    "sandstone": "#c9c4b9",
+                    "primary-container": "#7a1f32",
+                    "inverse-primary": "#ffb2ba",
+                    "ink": "#3E2723",
+                    "surface-container-highest": "#e5e2db",
+                    "inverse-surface": "#31312c",
+                    "tertiary": "#531600",
+                    "on-primary-fixed": "#400011",
+                    "primary-fixed-dim": "#ffb2ba",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-tertiary-fixed-variant": "#822800",
+                    "secondary-fixed": "#ffdcbf",
+                    "on-primary-fixed-variant": "#812437",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#ff8b9b",
+                    "surface-container": "#f0eee7",
+                    "outline-variant": "#dbc0c2",
+                    "on-primary": "#ffffff",
+                    "hairline": "#d8d0c2",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "outline": "#887173",
+                    "cream-container": "#f3eee4",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dcdad3",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb874",
+                    "on-secondary": "#ffffff",
+                    "indigo-slate": "#243746",
+                    "on-surface": "#1c1c18",
+                    "emerald-match": "#0b6e4f",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#feb064",
+                    "surface-bright": "#fcf9f2",
+                    "on-tertiary-container": "#ff9068",
+                    "surface-container-low": "#f6f3ec",
+                    "on-surface-variant": "#554243",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "inverse-on-surface": "#f3f0e9",
+                    "on-secondary-container": "#764200",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#8b5007",
+                    "surface-tint": "#a03c4d",
+                    "surface-container-high": "#ebe8e1",
+                    "primary-fixed": "#ffd9dc",
+                    "tertiary-container": "#792400",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "margin-desktop": "5vw",
+                    "3xl": "64px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "margin-mobile": "5vw",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "body-base": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "stat-price": ["Playfair Display"],
+                    "body-lead": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-base": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                    "headline-md": ["25px", {"lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600"}],
+                    "stat-price": ["42px", {"lineHeight": "1.0", "letterSpacing": "-1px", "fontWeight": "500"}],
+                    "body-lead": ["18px", {"lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400"}],
+                    "title-md": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        .shimmer-btn:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        
+        .editorial-shadow {
+            box-shadow: 0 4px 24px rgba(168, 137, 82, 0.15);
+        }
+        
+        /* Custom scrollbar for horizontal lists */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col md:flex-row relative">
+<!-- Mobile TopAppBar -->
+<header class="md:hidden bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky shadow-sm z-50 flex justify-between items-center px-margin-mobile h-16 w-full">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-headline-lg-mobile italic text-secondary">Konsa Pehnu</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</header>
+<!-- Desktop SideNav (Derived from TopAppBar intent + BottomNavBar items for Web) -->
+<nav class="hidden md:flex flex-col w-64 bg-surface/90 border-r border-hairline h-screen sticky top-0 py-8 px-6 z-40">
+<div class="mb-12">
+<h1 class="font-display-lg italic text-secondary text-headline-lg">Konsa Pehnu</h1>
+</div>
+<ul class="flex flex-col gap-6 flex-1">
+<li>
+<a class="flex items-center gap-4 text-primary font-title-md bg-primary-container/10 rounded-full py-3 px-4 transition-all" href="../today_s_look/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+                    Home
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-primary font-title-md py-3 px-4 transition-all" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined">checkroom</span>
+                    Wardrobe
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-primary font-title-md py-3 px-4 transition-all" href="../ai_stylist_chat/code.html">
+<span class="material-symbols-outlined">chat_bubble</span>
+                    Stylist
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-primary font-title-md py-3 px-4 transition-all" href="../styling_by_occasion/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Outfits
+                </a>
+</li>
+</ul>
+<div class="mt-auto">
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-primary font-title-md py-3 px-4 transition-all" href="../style_insights/code.html">
+<span class="material-symbols-outlined">person</span>
+                Profile
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 pb-[90px] md:pb-0">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl md:py-2xl max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-lg md:gap-2xl items-start">
+<!-- Left: Curated Image -->
+<div class="w-full md:w-[55%] relative group">
+<div class="rounded-xl overflow-hidden editorial-shadow bg-cream-container border border-hairline relative aspect-[3/4] w-full">
+<img alt="Curated Outfit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end editorial fashion photograph of a contemporary Indian menswear outfit. The look features a crisp, light unbleached linen kurta paired perfectly with tailored, tapered trousers in a muted sandstone hue. The styling is minimalist and luxurious, suggesting effortless elegance. Soft, warm natural light filters through, creating subtle shadows and highlighting the tactile textures of the breathable fabrics. The background is a clean, neutral studio setting in warm ivory tones, reflecting a modern Sartorial Journal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDhZQJpNUMwiOM_9aiTqS2dG03u3KHZa_5DTu9LRcw8cAg5zxtrQL_IZ_92bJhneDLGrj8zyYT3Ql8i_ZX4Zj3A3-jVQh_E4MvhejjxM3JiOO_7EZ7q6SufyKQSViE8ULegOI3k3CyR3Dx-BkkayZtXB2KHLE3bQHN6MUdBK50MHw21L36yl8Y7h7iKSuO7P94geoGVa7HsuxDGcpBNpeX2BEi3AT8O3-v8-Xp_tDXstsK9lwVSUQX"/>
+<!-- Weather Badge Overlay -->
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2 border border-hairline shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">light_mode</span>
+<span class="font-label-caps text-label-caps text-ink">28°C MUMBAI</span>
+</div>
+<!-- Match Score Overlay -->
+<div class="absolute bottom-4 right-4 bg-emerald-match text-white rounded-full px-4 py-2 flex items-center gap-2 shadow-md">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-caps text-label-caps">98% MATCH</span>
+</div>
+</div>
+</div>
+<!-- Right: Details & Actions -->
+<div class="w-full md:w-[45%] flex flex-col gap-xl sticky top-24">
+<div class="space-y-4">
+<h2 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-ink">The Effortless Linen Edit</h2>
+<p class="font-body-lead text-body-lead text-on-surface-variant border-l-2 border-secondary pl-4">
+                            Curated for a sunny 28°C Mumbai afternoon. This combination balances breathable textures with sharp tailoring, ideal for both casual meetings and elevated lounging.
+                        </p>
+</div>
+<!-- Components Breakdown -->
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest border-b border-hairline pb-2">Outfit Elements</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 p-3 rounded-lg border border-hairline bg-cream-container hover:-translate-y-1 transition-transform duration-300">
+<div class="w-16 h-16 rounded bg-surface border border-hairline overflow-hidden flex-shrink-0">
+<img alt="Linen Kurta" class="w-full h-full object-cover" data-alt="A flat lay product shot of a premium unbleached linen kurta. The fabric shows subtle slub textures and a soft, natural drape. It features a clean mandarin collar and minimal placket. The lighting is soft and even, set against a pristine, warm paper-toned background to emphasize the luxurious, organic nature of the garment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm1kYwkRNUhIJQg1jYJU7WDo34XMBQ3mWU5LpyaxQbAWLejmcazlhI0pZKXhOywsWDzcr9n-q7ypQAToR7Y0rFbIB6aMtZSalP84RqCHGk4DOtoromJYMg249UQV_YvzUKnWv_JU3oaSt4aSuHoJO1ZW-bT2i9njwaaHgPY8Gc8_hnjLnDuIyt3GH_WvtktGKesQX2E8x4ZrjrvJcvHAKZqBdYopkWzTD7QxjaG7C_OArOqKYemlX2"/>
+</div>
+<div>
+<p class="font-title-md text-title-md text-ink">Unbleached Linen Kurta</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Wardrobe Item #042</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 p-3 rounded-lg border border-hairline bg-cream-container hover:-translate-y-1 transition-transform duration-300">
+<div class="w-16 h-16 rounded bg-surface border border-hairline overflow-hidden flex-shrink-0">
+<img alt="Tailored Trousers" class="w-full h-full object-cover" data-alt="A flat lay product shot of tailored men's trousers in a sophisticated sandstone color. The pants feature a sharp front crease, tab closure, and a clean modern cut. Photographed beautifully against a warm, neutral background with subtle, high-end editorial lighting that highlights the weave of the fine fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBcxtGuzVTxcgNyXO5yRVF7qxL_ZKAinZrkuZcE0zXvOo6b505ootc0bXJQhnAi-eVvqdgMVjPjBv2fC_kIbSMnKfTGBzKGymS5H8JV2x8pXU6AhnxAnpHmdsnjujAdqF9P8ek0R5gDalWIL0kQMwh0PK5pVagpxRyynCoy6fh7Y7BRJXZL3DEFbOg5aNOI6avekOlOrKknn6IsEKkerFTVRDNlCmf7CPN9Z_AfD74JY-V9yVLTMh"/>
+</div>
+<div>
+<p class="font-title-md text-title-md text-ink">Sandstone Tailored Trousers</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Wardrobe Item #118</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-hairline">
+<button class="shimmer-btn flex-1 bg-primary-container text-white font-title-md text-title-md py-4 px-8 rounded-full shadow-md hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">checkroom</span>
+                            Wear This
+                        </button>
+<button class="flex-1 bg-transparent border border-ink text-ink font-title-md text-title-md py-4 px-8 rounded-full hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shuffle</span>
+                            Shuffle Outfit
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container/10 rounded-full py-1 px-3 scale-90 transition-all duration-200" href="../today_s_look/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="font-label-caps text-label-caps mt-1">Wardrobe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../ai_stylist_chat/code.html">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1">Stylist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../styling_by_occasion/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-caps text-label-caps mt-1">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../style_insights/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Konsa Pehnu - AI Stylist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fcf9f2",
+                        "on-tertiary-fixed": "#380c00",
+                        "primary": "#5c051d",
+                        "surface-variant": "#e5e2db",
+                        "on-background": "#1c1c18",
+                        "background": "#fcf9f2",
+                        "sandstone": "#c9c4b9",
+                        "primary-container": "#7a1f32",
+                        "inverse-primary": "#ffb2ba",
+                        "ink": "#3E2723",
+                        "surface-container-highest": "#e5e2db",
+                        "inverse-surface": "#31312c",
+                        "tertiary": "#531600",
+                        "on-primary-fixed": "#400011",
+                        "primary-fixed-dim": "#ffb2ba",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "secondary-fixed": "#ffdcbf",
+                        "on-primary-fixed-variant": "#812437",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#ff8b9b",
+                        "surface-container": "#f0eee7",
+                        "outline-variant": "#dbc0c2",
+                        "on-primary": "#ffffff",
+                        "hairline": "#d8d0c2",
+                        "on-secondary-fixed-variant": "#6a3b00",
+                        "outline": "#887173",
+                        "cream-container": "#f3eee4",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcdad3",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb874",
+                        "on-secondary": "#ffffff",
+                        "indigo-slate": "#243746",
+                        "on-surface": "#1c1c18",
+                        "emerald-match": "#0b6e4f",
+                        "on-secondary-fixed": "#2d1600",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#feb064",
+                        "surface-bright": "#fcf9f2",
+                        "on-tertiary-container": "#ff9068",
+                        "surface-container-low": "#f6f3ec",
+                        "on-surface-variant": "#554243",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "inverse-on-surface": "#f3f0e9",
+                        "on-secondary-container": "#764200",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#8b5007",
+                        "surface-tint": "#a03c4d",
+                        "surface-container-high": "#ebe8e1",
+                        "primary-fixed": "#ffd9dc",
+                        "tertiary-container": "#792400",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "margin-desktop": "5vw",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "margin-mobile": "5vw",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "stat-price": ["Playfair Display"],
+                        "body-lead": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-base": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                        "headline-md": ["25px", {"lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600"}],
+                        "stat-price": ["42px", {"lineHeight": "1.0", "letterSpacing": "-1px", "fontWeight": "500"}],
+                        "body-lead": ["18px", {"lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400"}],
+                        "title-md": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Shimmer effect for primary buttons */
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+            transform: skewX(-20deg);
+        }
+        .btn-shimmer:hover::after {
+            animation: shimmer 0.75s ease-in-out;
+        }
+        
+        /* Ambient shadow for focus */
+        .input-focus-ring:focus-within {
+            box-shadow: 0 0 0 3px rgba(139, 80, 7, 0.15);
+            border-color: #8b5007;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex flex-col h-screen overflow-hidden pt-safe selection:bg-secondary-container selection:text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky shadow-sm flex justify-between items-center px-margin-mobile h-16 w-full z-50 flex-shrink-0">
+<button aria-label="Menu" class="hover:opacity-80 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-headline-lg-mobile dark:text-inverse-primary font-display-lg-mobile italic text-secondary dark:text-secondary-fixed-dim text-center flex-1">
+            Konsa Pehnu
+        </h1>
+<button aria-label="Profile" class="hover:opacity-80 transition-opacity w-8 h-8 rounded-full overflow-hidden border border-hairline flex items-center justify-center bg-cream-container">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of a modern Indian man with neat facial hair, wearing a subtly textured ivory linen shirt. The lighting is warm and natural, casting soft shadows that highlight the premium, tactile nature of the fabric. The background is a minimalist, slightly out-of-focus unbleached cotton canvas, enhancing the high-end editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPZTKfTpVSmBcr1PhGjPDszAGBlB2vm9GhknQo1m10C-icrpnGw2qprKqZRBOYnFZ6smZdIiFZWwK7qW7E788XnKN3zj3HdQriOdgXiW_6IrLNWBbVPhzcu-OsWgHx_UwLOZCxb48wEDlePFgMJpkz9VlYhXNFHlvSHPsLZ1ifHl3eX3_OuQOTfAcU9xuj7EHVGIlhbzjbdYL8eoyp3huuDNtsC7lYn-GFF4NLAdV8GfnUBg0oWLl5"/>
+</button>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 flex flex-col overflow-hidden relative w-full max-w-[760px] mx-auto md:px-margin-desktop md:py-lg">
+<!-- Chat History Area -->
+<div class="flex-1 overflow-y-auto px-margin-mobile md:px-0 py-lg hide-scrollbar flex flex-col gap-lg pb-[120px] md:pb-2xl">
+<!-- AI Welcome Message -->
+<div class="flex items-end gap-sm md:gap-md max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0 shadow-[0_2px_8px_rgba(168,137,82,0.08)]">
+<span class="font-display-lg text-body-base italic text-secondary">K</span>
+</div>
+<div class="bg-cream-container border border-hairline text-on-surface rounded-2xl rounded-bl-sm px-4 py-3 shadow-[0_4px_12px_rgba(168,137,82,0.08)]">
+<p class="font-body-base text-body-base">
+                        Namaste. I'm Konsa, your personal sartorial journal. Ready to curate your look for the day?
+                    </p>
+</div>
+</div>
+<!-- Quick Reply Chips (Horizontal Scroll) -->
+<div class="flex gap-sm overflow-x-auto hide-scrollbar py-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 pl-[40px] md:pl-[48px] w-full max-w-[90%] snap-x">
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+                    What to wear for a Mehendi?
+                </button>
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+                    Style my blue blazer
+                </button>
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+                    Current trends
+                </button>
+</div>
+<!-- User Message -->
+<div class="flex items-end gap-sm md:gap-md self-end max-w-[85%] mt-4">
+<div class="bg-primary-container text-on-primary rounded-2xl rounded-br-sm px-4 py-3 shadow-[0_4px_12px_rgba(122,31,50,0.15)]">
+<p class="font-body-base text-body-base">
+                        I have a cocktail reception this evening. Thinking of wearing the navy velvet bandhgala we added yesterday. Thoughts?
+                    </p>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex items-end gap-sm md:gap-md max-w-[85%] mt-4">
+<div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0 shadow-[0_2px_8px_rgba(168,137,82,0.08)]">
+<span class="font-display-lg text-body-base italic text-secondary">K</span>
+</div>
+<div class="flex flex-col gap-3 w-full">
+<div class="bg-cream-container border border-hairline text-on-surface rounded-2xl rounded-bl-sm px-4 py-3 shadow-[0_4px_12px_rgba(168,137,82,0.08)]">
+<p class="font-body-base text-body-base mb-2">
+                            An excellent choice for an evening reception. The velvet will capture the ambient light beautifully.
+                        </p>
+<p class="font-body-base text-body-base">
+                            To maintain the high-end editorial feel, pair it with your ivory silk pocket square and the minimal gold lapel pin. Let the texture of the bandhgala be the hero.
+                        </p>
+</div>
+<!-- Outfit Suggestion Card -->
+<div class="bg-surface border border-hairline rounded-lg p-3 shadow-[0_4px_16px_rgba(168,137,82,0.05)] w-[260px] group hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-3">
+<span class="font-label-caps text-label-caps text-secondary">Look 01</span>
+<span class="material-symbols-outlined text-secondary opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" data-icon="arrow_outward" style="font-size: 16px;">arrow_outward</span>
+</div>
+<div class="w-full h-32 rounded bg-surface-container-high mb-3 overflow-hidden relative">
+<img alt="Navy Velvet Bandhgala Outfit" class="w-full h-full object-cover" data-alt="A sophisticated flat lay editorial photograph of a deep navy blue velvet bandhgala jacket, partially folded to reveal a crisp white unbleached cotton shirt underneath. An ivory silk pocket square and a minimalist gold lapel pin sit elegantly beside it on a textured sandstone surface. Warm, diffused lighting creates soft ambient shadows, emphasizing the tactile luxury of the velvet and silk in a high-end, minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC873gzYI9MTCsL0kXw4Vg7oRo1liybpRffto5tUS5dSLB88igXc5XYMa3LTSf_jES1D0WDO59FJKpnJGJzO6sz_szRq-nG1riYFoZywgFd-EG1pqhq_X5OCiWobnjwVnmn4DoQe6MW1_6F-hddsbcQ20voUkcjVzA9RTyHkViTkoaZEpDfAgQ3prYJB3B9BxpygZD32_iT-WlAM8xLdaJpnyVEtCk0sv380SmEznlAhuO4YKA3svgH"/>
+<!-- Subtle gradient overlay to enhance tactile feel -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-variant/40 to-transparent"></div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">The Evening Edit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Navy Bandhgala + Ivory Accents</p>
+<div class="mt-3 flex items-center gap-2">
+<div class="flex items-center gap-1 bg-[#0b6e4f]/10 text-emerald-match px-2 py-1 rounded-full border border-[#0b6e4f]/20">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-size: 14px;">check_circle</span>
+<span class="font-label-caps text-label-caps">98% Match</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Typing Indicator (Simulated) -->
+<div class="flex items-end gap-sm md:gap-md max-w-[85%] mt-4 opacity-70">
+<div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0">
+<span class="font-display-lg text-body-base italic text-secondary">K</span>
+</div>
+<div class="bg-cream-container border border-hairline rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1 h-[44px]">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50 animate-bounce" style="animation-delay: 0ms;"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50 animate-bounce" style="animation-delay: 150ms;"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50 animate-bounce" style="animation-delay: 300ms;"></div>
+</div>
+</div>
+</div>
+<!-- Input Area (Fixed at bottom on mobile, absolute on desktop) -->
+<div class="absolute bottom-[60px] md:bottom-lg left-0 w-full px-margin-mobile md:px-0 pb-safe md:pb-0 bg-gradient-to-t from-surface via-surface/95 to-transparent pt-6 z-40">
+<div class="bg-surface border border-hairline rounded-xl shadow-[0_-4px_24px_rgba(168,137,82,0.08)] p-2 flex items-end gap-2 input-focus-ring transition-all duration-300 mx-auto w-full">
+<button aria-label="Add item" class="p-2 text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<div class="flex-1 relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-base text-body-base text-on-surface py-2.5 placeholder:text-on-surface-variant/50 hide-scrollbar" placeholder="Ask Konsa..." rows="1" style="min-height: 44px; max-height: 120px;"></textarea>
+</div>
+<button aria-label="Send message" class="bg-primary-container text-on-primary w-10 h-10 rounded-lg flex items-center justify-center shadow-md hover:-translate-y-0.5 transition-transform btn-shimmer flex-shrink-0 mb-0.5">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl docked full-width bottom-0 fixed rounded-t-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="../today_s_look/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="checkroom">checkroom</span>
+<span class="font-label-caps text-label-caps">Wardrobe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container/10 rounded-full py-1 px-3 Active: scale-90 transition-all duration-200" href="../ai_stylist_chat/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-caps text-label-caps">Stylist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="../styling_by_occasion/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="../style_insights/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple auto-resize for textarea
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+            if(this.value === '') {
+                 this.style.height = '44px';
+            }
+        });
+    </script>
+</body></html>

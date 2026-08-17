@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Konsa Pehnu - Wardrobe Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#fcf9f2",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#764200",
+                      "sandstone": "#c9c4b9",
+                      "surface-container-highest": "#e5e2db",
+                      "error-container": "#ffdad6",
+                      "primary": "#5c051d",
+                      "primary-fixed-dim": "#ffb2ba",
+                      "secondary-fixed": "#ffdcbf",
+                      "primary-fixed": "#ffd9dc",
+                      "surface-variant": "#e5e2db",
+                      "secondary-fixed-dim": "#ffb874",
+                      "on-tertiary-fixed-variant": "#822800",
+                      "tertiary": "#531600",
+                      "on-surface": "#1c1c18",
+                      "on-tertiary-fixed": "#380c00",
+                      "surface-bright": "#fcf9f2",
+                      "surface-dim": "#dcdad3",
+                      "surface-container-high": "#ebe8e1",
+                      "inverse-on-surface": "#f3f0e9",
+                      "inverse-surface": "#31312c",
+                      "on-secondary-fixed": "#2d1600",
+                      "secondary-container": "#feb064",
+                      "emerald-match": "#0b6e4f",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#ffb2ba",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#792400",
+                      "on-error": "#ffffff",
+                      "on-background": "#1c1c18",
+                      "cream-container": "#f3eee4",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#ff9068",
+                      "hairline": "#d8d0c2",
+                      "on-primary": "#ffffff",
+                      "secondary": "#8b5007",
+                      "surface-tint": "#a03c4d",
+                      "on-secondary-fixed-variant": "#6a3b00",
+                      "tertiary-fixed": "#ffdbcf",
+                      "indigo-slate": "#243746",
+                      "primary-container": "#7a1f32",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "outline": "#887173",
+                      "on-primary-fixed-variant": "#812437",
+                      "surface-container-low": "#f6f3ec",
+                      "on-surface-variant": "#554243",
+                      "on-primary-fixed": "#400011",
+                      "on-primary-container": "#ff8b9b",
+                      "surface-container": "#f0eee7",
+                      "surface": "#fcf9f2",
+                      "outline-variant": "#dbc0c2",
+                      "ink": "#3E2723"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "margin-mobile": "5vw",
+                      "unit": "4px",
+                      "margin-desktop": "5vw",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "gutter": "20px",
+                      "2xl": "48px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "body-lead": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "stat-price": ["Playfair Display"],
+                      "body-base": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-caps": ["Inter"],
+                      "title-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lead": ["18px", {"lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "stat-price": ["42px", {"lineHeight": "1.0", "letterSpacing": "-1px", "fontWeight": "500"}],
+                      "body-base": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                      "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                      "headline-md": ["25px", {"lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600"}],
+                      "label-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600"}],
+                      "title-md": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .jali-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3.33333L36.6667 20L20 36.6667L3.33333 20L20 3.33333ZM20 6.66667L6.66667 20L20 33.3333L33.3333 20L20 6.66667Z' fill='%23c9c4b9' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .scanner-beam {
+            background: linear-gradient(to bottom, transparent, rgba(139, 80, 7, 0.4), transparent);
+            animation: scanline 3s linear infinite;
+        }
+
+        .shimmer-btn:hover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 1s forwards;
+        }
+        
+        @keyframes shimmer {
+            100% { left: 200%; }
+        }
+        
+        .lift-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .lift-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(168, 137, 82, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base jali-pattern min-h-screen relative pb-safe">
+<!-- Top Navigation (Shell suppressed for focused task, but header kept for brand anchor) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm h-16 flex justify-between items-center px-margin-mobile max-w-md mx-auto md:hidden">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<a class="font-headline-md text-headline-md italic text-secondary" href="../today_s_look/code.html">Konsa Pehnu</a>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="pt-[88px] px-margin-mobile pb-2xl max-w-md mx-auto flex flex-col gap-xl">
+<!-- Header Text -->
+<div class="text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Add to Wardrobe</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Snap a photo or upload from your gallery to let our AI tailor your collection.</p>
+</div>
+<!-- Main Action Area (Upload/Camera) -->
+<div class="bg-cream-container border border-hairline rounded-xl p-lg flex flex-col items-center justify-center gap-md min-h-[200px] lift-hover cursor-pointer relative overflow-hidden group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border border-sandstone group-hover:border-secondary transition-colors">
+<span class="material-symbols-outlined text-[32px] text-ink group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
+</div>
+<p class="font-title-md text-title-md text-ink">Tap to Snap or Upload</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">JPEG, PNG up to 10MB</p>
+</div>
+<!-- Recent Upload Preview (Processing State) -->
+<div class="relative bg-surface rounded-xl border border-hairline p-md shadow-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Processing Item 01</h2>
+<div class="flex gap-md">
+<!-- Image Preview with Scanning Effect -->
+<div class="w-24 h-32 bg-surface-container-high rounded-lg relative overflow-hidden flex-shrink-0 border border-sandstone">
+<img alt="Uploading Kurta" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A high-quality, softly lit photograph of a beautiful saffron-colored linen Kurta hanging against a neutral background. The fabric texture is clearly visible, evoking a luxurious, editorial feel suitable for a premium modern Indian menswear app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIzOHpFB4FB1GXPxnGNtp7wM-duqIZ302Z3fZVJs5_l1wkLcDpybo6C8tpD9iyHd6vPY1kXDRdRNQNcomcZeLR8K87FfKxVDDigpPhhn1QTD1hP6vzqL4HjPv2KFWTOnSkP6nj4zJlP9ab9ikt9nthWBw_7BX7ihz7CH5-MkkLaKDt7zHiUAUz7cW7KRMw5C1NDtKUblhDDe5aqrKIzmn8Qsg6dGtgHSHmqXmxuAyvA_e8wzRs8c0x"/>
+<!-- Scanner Animation Overlay -->
+<div class="absolute inset-0 scanner-beam"></div>
+<div class="absolute inset-0 border-2 border-secondary/30 rounded-lg"></div>
+</div>
+<!-- AI Tagging Information -->
+<div class="flex flex-col justify-between flex-grow py-sm">
+<div>
+<div class="flex items-center gap-2 mb-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary animate-pulse">auto_awesome</span>
+<span class="font-title-md text-title-md text-ink">Analyzing Fabric...</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<!-- Tags appearing sequentially (simulated) -->
+<span class="inline-flex items-center px-3 py-1 rounded-full border border-sandstone text-body-sm font-body-sm text-ink bg-surface-container-lowest">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Kurta
+                            </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full border border-sandstone text-body-sm font-body-sm text-ink bg-surface-container-lowest opacity-70">
+<span class="w-2 h-2 rounded-full bg-[#cc5527] mr-2"></span> Saffron
+                            </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full border border-sandstone text-body-sm font-body-sm text-ink bg-surface-container-lowest opacity-40">
+                                Linen
+                            </span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-4">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 65%"></div>
+</div>
+<p class="text-right font-label-caps text-label-caps text-on-surface-variant mt-1">Removing Background...</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto pt-lg">
+<a class="w-full bg-primary text-on-primary font-title-md text-title-md py-4 rounded-full relative overflow-hidden shimmer-btn transition-colors hover:bg-gradient-to-r hover:from-primary hover:to-[#8b5007] flex items-center justify-center" href="../digital_wardrobe/code.html">
+                 Confirm Details
+             </a>
+<div class="text-center mt-md">
+<a class="text-ink font-body-base text-body-base border-b border-ink pb-0.5 hover:text-secondary hover:border-secondary transition-colors" href="../digital_wardrobe/code.html">
+                     Cancel
+                 </a>
+</div>
+</div>
+</main>
+</body></html>

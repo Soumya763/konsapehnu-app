@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Konsa Pehnu - Outfit Builder</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#764200",
+                        "sandstone": "#c9c4b9",
+                        "surface-container-highest": "#e5e2db",
+                        "error-container": "#ffdad6",
+                        "primary": "#5c051d",
+                        "primary-fixed-dim": "#ffb2ba",
+                        "secondary-fixed": "#ffdcbf",
+                        "primary-fixed": "#ffd9dc",
+                        "surface-variant": "#e5e2db",
+                        "secondary-fixed-dim": "#ffb874",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "tertiary": "#531600",
+                        "on-surface": "#1c1c18",
+                        "on-tertiary-fixed": "#380c00",
+                        "surface-bright": "#fcf9f2",
+                        "surface-dim": "#dcdad3",
+                        "surface-container-high": "#ebe8e1",
+                        "inverse-on-surface": "#f3f0e9",
+                        "inverse-surface": "#31312c",
+                        "on-secondary-fixed": "#2d1600",
+                        "secondary-container": "#feb064",
+                        "emerald-match": "#0b6e4f",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#792400",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c18",
+                        "cream-container": "#f3eee4",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ff9068",
+                        "hairline": "#d8d0c2",
+                        "on-primary": "#ffffff",
+                        "secondary": "#8b5007",
+                        "surface-tint": "#a03c4d",
+                        "on-secondary-fixed-variant": "#6a3b00",
+                        "tertiary-fixed": "#ffdbcf",
+                        "indigo-slate": "#243746",
+                        "primary-container": "#7a1f32",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "outline": "#887173",
+                        "on-primary-fixed-variant": "#812437",
+                        "surface-container-low": "#f6f3ec",
+                        "on-surface-variant": "#554243",
+                        "on-primary-fixed": "#400011",
+                        "on-primary-container": "#ff8b9b",
+                        "surface-container": "#f0eee7",
+                        "surface": "#fcf9f2",
+                        "outline-variant": "#dbc0c2",
+                        "ink": "#3E2723"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "margin-mobile": "5vw",
+                        "unit": "4px",
+                        "margin-desktop": "5vw",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lead": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "stat-price": ["Playfair Display"],
+                        "body-base": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "title-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lead": ["18px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "stat-price": ["42px", { "lineHeight": "1.0", "letterSpacing": "-1px", "fontWeight": "500" }],
+                        "body-base": ["15px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "headline-md": ["25px", { "lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.1", "letterSpacing": "-0.5px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Utilities for Micro-Luxe and Motion */
+        .ambient-shadow {
+            box-shadow: 0 8px 32px rgba(168, 137, 82, 0.15);
+        }
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+        .btn-shimmer:hover::after {
+            left: 200%;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(var(--tw-colors-hairline) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Hide scrollbar for horizontal scrolling but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-base overflow-hidden">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<!-- Leading Icon -->
+<a class="text-primary dark:text-primary-fixed-dim hover:text-secondary dark:hover:text-secondary-fixed transition-colors active:opacity-80 transition-opacity flex items-center justify-center p-sm -ml-sm" href="../today_s_look/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</a>
+<!-- Headline / Brand -->
+<a class="font-headline-md text-headline-md italic text-secondary dark:text-secondary-fixed" href="../today_s_look/code.html">
+                Konsa Pehnu
+            </a>
+<!-- Trailing Avatar -->
+<a class="text-primary dark:text-primary-fixed-dim hover:text-secondary dark:hover:text-secondary-fixed transition-colors active:opacity-80 transition-opacity flex items-center justify-center -mr-sm" href="../style_insights/code.html">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-hairline overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up profile portrait of a confident Indian man with a neat beard, wearing a tailored navy blazer over a crisp white shirt. The background is a soft, blurred studio setting with warm, premium lighting, capturing an editorial, modern luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC99jfOZ5Hw-JfXxEtyyR0EP-KMjjf0krRrZ0HcpTm9EXXNjWaiCR9_XTt8yWHrmOhkj3FPwBmZEo33x3mC_l-q4FGq5llGKTaBiXp-3jU6ZZKPbhM1KyVAYJ5Vp1-Oxk5Cl2bD8eZLLqR978LhDcF8dTKrScY7zC1Ty6Q8YQMZGYmbQ7tieteU-8DX1F2WcT8NejYZks0M0kOPRINVfkzxYwSTGTj6Rr3lkNuq5WKrGnbBbWyvStKy"/>
+</div>
+</a>
+</div>
+</header>
+<!-- Main Content Area: Outfit Canvas -->
+<!-- Added top padding to account for TopAppBar and bottom padding for the Tray -->
+<main class="pt-16 h-screen flex flex-col relative">
+<!-- Canvas Header / Context -->
+<div class="px-margin-mobile py-lg flex justify-between items-end z-10 relative pointer-events-none">
+<div>
+<span class="font-label-caps text-label-caps text-sandstone block mb-xs tracking-widest uppercase">Canvas 01</span>
+<h2 class="font-headline-md text-headline-md text-ink">Curate Look</h2>
+</div>
+<button class="pointer-events-auto font-label-caps text-label-caps text-secondary underline decoration-hairline underline-offset-4 hover:text-secondary-container transition-colors uppercase">
+                Clear All
+            </button>
+</div>
+<!-- The Drag & Drop Canvas -->
+<div class="flex-grow px-margin-mobile pb-[45vh] relative z-0">
+<div class="w-full h-full bg-surface-container-lowest rounded-xl border border-hairline bg-grid-pattern relative flex flex-col items-center justify-center ambient-shadow overflow-hidden group">
+<!-- Central instruction (fades slightly if items added) -->
+<div class="text-center opacity-40 group-hover:opacity-60 transition-opacity flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl text-sandstone" style="font-variation-settings: 'FILL' 0;">checkroom</span>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-[200px]">Drag items from your wardrobe to build an outfit</p>
+</div>
+<!-- Drop Zones (Conceptual) -->
+<div class="absolute inset-x-0 top-[10%] h-[35%] flex justify-center border-b border-dashed border-hairline/50 items-center">
+<span class="font-label-caps text-label-caps text-sandstone/50 uppercase tracking-widest">Top</span>
+</div>
+<div class="absolute inset-x-0 top-[45%] h-[40%] flex justify-center border-b border-dashed border-hairline/50 items-center">
+<span class="font-label-caps text-label-caps text-sandstone/50 uppercase tracking-widest">Bottom</span>
+</div>
+</div>
+</div>
+<!-- Floating AI Action Area -->
+<div class="absolute bottom-[38vh] left-0 right-0 flex justify-center z-20 pointer-events-none">
+<div class="px-margin-mobile w-full flex justify-end pointer-events-auto">
+<button class="btn-shimmer bg-primary-container text-on-primary-container rounded-full px-lg py-md flex items-center gap-sm ambient-shadow hover:bg-gradient-to-r hover:from-primary-container hover:to-secondary transition-all duration-300 transform hover:-translate-y-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-title-md text-title-md">AI Complete</span>
+</button>
+</div>
+</div>
+<!-- Bottom Wardrobe Tray -->
+<!-- Suppressing global BottomNavBar in favor of this functional tray for a focused task -->
+<div class="absolute bottom-0 left-0 w-full h-[35vh] bg-surface-container-high rounded-t-[24px] border-t border-hairline ambient-shadow z-30 flex flex-col pt-sm">
+<!-- Handle -->
+<div class="w-full flex justify-center pb-sm">
+<div class="w-12 h-1 bg-sandstone rounded-full opacity-50"></div>
+</div>
+<!-- Category Chips -->
+<div class="px-margin-mobile flex gap-sm overflow-x-auto hide-scrollbar pb-sm shrink-0">
+<button class="px-md py-sm rounded-full bg-ink text-on-tertiary font-label-caps text-label-caps uppercase transition-colors shrink-0">
+                    All Items
+                </button>
+<button class="px-md py-sm rounded-full border border-sandstone text-on-surface-variant hover:bg-ink hover:text-on-tertiary hover:border-ink font-label-caps text-label-caps uppercase transition-colors shrink-0">
+                    Tops
+                </button>
+<button class="px-md py-sm rounded-full border border-sandstone text-on-surface-variant hover:bg-ink hover:text-on-tertiary hover:border-ink font-label-caps text-label-caps uppercase transition-colors shrink-0">
+                    Bottoms
+                </button>
+<button class="px-md py-sm rounded-full border border-sandstone text-on-surface-variant hover:bg-ink hover:text-on-tertiary hover:border-ink font-label-caps text-label-caps uppercase transition-colors shrink-0">
+                    Shoes
+                </button>
+</div>
+<!-- Items Horizontal Scroll -->
+<div class="flex-grow overflow-x-auto hide-scrollbar px-margin-mobile flex gap-md pb-md items-start">
+<!-- Wardrobe Item Card 1 -->
+<div class="w-[100px] shrink-0 flex flex-col gap-xs group cursor-grab active:cursor-grabbing">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest border border-hairline rounded-lg overflow-hidden relative ambient-shadow group-hover:-translate-y-1 transition-transform">
+<img alt="Beige Linen Shirt" class="w-full h-full object-cover" data-alt="A neatly folded beige linen men's shirt isolated against a pure white background, softly lit to emphasize the natural texture and weave of the high-quality fabric. Minimalist, clean, premium editorial catalog photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisKgcHGwsaXT7wylyCPAFJfzREd8aQGl9NjuiK0O5QprVtcP8u0GLucwgAqcwnp5h3RiGbPaq6iDkZXfbfqKpdD9lLFUb-9e1k_4-nSoOxRbm65P6WBO6zXmrZSx6cekyT0WvuhjCqMRNVcmoKaqGtk9fBQv-ZPYXmp8NSpatiZuWCFUK5cfYXeOhVZgNn36N3P_rc8a4vlCwGW17ySgl0G7EdnqvDXh3IZsodAsKtb93L_ULHsyB"/>
+<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Linen Shirt</span>
+</div>
+<!-- Wardrobe Item Card 2 -->
+<div class="w-[100px] shrink-0 flex flex-col gap-xs group cursor-grab active:cursor-grabbing">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest border border-hairline rounded-lg overflow-hidden relative ambient-shadow group-hover:-translate-y-1 transition-transform">
+<img alt="Navy Trousers" class="w-full h-full object-cover" data-alt="A pair of dark navy tailored men's trousers folded neatly, laid flat against a pristine white background. The fabric has a subtle sheen indicating high-quality wool blend, captured with crisp, even studio lighting for a luxurious modern catalog look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fdxko6bgzj6f-W4C4pfsosg0IJg8_R6xRPnFI8gplt3GfGlaV6kANZQ2955eP8kfMMFk9fDZ6TQzroqWabcSROuXMZ4d3szIReZaPIpnQ04qiRSSRZsoJ5BrdC0o7gto1fqNtcXkYZvNbljB04P4zvY31-aW9TfgVgLmvc5V0HfyAA_FLK3IXZnDCzoGs9lpnlfx8XJ2h5vzkRnwkqWIZUImsDP1ayCQsr4dJLsqmxX5X7VSfLzj"/>
+<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tailored Trouser</span>
+</div>
+<!-- Wardrobe Item Card 3 -->
+<div class="w-[100px] shrink-0 flex flex-col gap-xs group cursor-grab active:cursor-grabbing">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest border border-hairline rounded-lg overflow-hidden relative ambient-shadow group-hover:-translate-y-1 transition-transform">
+<img alt="Brown Oxfords" class="w-full h-full object-cover" data-alt="A pair of classic brown leather men's Oxford shoes, polished to a soft shine, positioned diagonally against a minimal white background. Warm, directional lighting highlights the craftsmanship and stitching, embodying sophisticated Indian-Modern Luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmTMl64kpXwuNF3eP0LZ82nGPmELUQw6JPmiJeONkElIFLndMHNlqf6g9L1MWF9OYnOD89Aig-5l95QXtRrlxOLN7Yw8ciWZoIMqViLwUv4sPonWHdKM_wgeW_9GhRPQ_J-OnFwS2NMg--roiWzffG23MjFB9UUTLK9qVKOWNKAARQyIcQs_qZAlKQ0bsAULDrc9KtmUnejSLS5zxk7axW9M3qaGxxVP6nob8EkOHQAQtjoOo6Ul5X"/>
+<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Oxford Shoes</span>
+</div>
+<!-- Wardrobe Item Card 4 -->
+<div class="w-[100px] shrink-0 flex flex-col gap-xs group cursor-grab active:cursor-grabbing">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest border border-hairline rounded-lg overflow-hidden relative ambient-shadow group-hover:-translate-y-1 transition-transform">
+<img alt="Sage T-Shirt" class="w-full h-full object-cover" data-alt="A light sage green textured casual men's t-shirt laid perfectly flat on a bright white surface. The soft organic cotton fabric is clearly visible under diffuse, high-key studio lighting, conveying a relaxed but premium lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjSe7JFhZe90b_uCNzCJAfK07IR5A3enK2ZCm9CyDYQnaEa89dVhHleBzioJKlOOzT7kBpw9AiM5falPYzPyt35K0o4MbIoHEfc6s0FVojYxDBspxaItCWwqBtKQlJPnM407rHPFIuQiqF5wkQxOPdoS8lHB3tfITuS-zetygjWk7afMf-biD_MmYdgDFU385PpMER4XSC0On-b7hlB6v8LOMQwdVFI9u1sWIaxfoJMd2dbALxvyLU"/>
+<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Knit Tee</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>
