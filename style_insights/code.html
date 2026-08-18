@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -124,7 +124,7 @@
 <button aria-label="Menu" class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors flex items-center justify-center w-10 h-10">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<h1 class="font-headline-md text-headline-md italic text-secondary dark:text-secondary-fixed">Konsa Pehnu</h1>
+<h1 class="font-display-lg text-[32px] italic text-secondary">Konsa Pehnu</h1>
 <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-hairline flex items-center justify-center">
 <!-- Simulated avatar via icon -->
 <span class="material-symbols-outlined text-sm text-on-surface-variant">person</span>
@@ -218,27 +218,26 @@
 </section>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-md pb-safe bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-xl border-t border-hairline dark:border-outline-variant shadow-lg z-50 rounded-t-[1.5rem] md:hidden">
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../today_s_look/code.html">
-<span class="material-symbols-outlined mb-1 text-[22px]">home</span>
-<span class="font-label-caps text-[9px]">Home</span>
+<nav class="md:hidden bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../today_s_look/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home_app_logo</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../digital_wardrobe/code.html">
-<span class="material-symbols-outlined mb-1 text-[22px]">dry_cleaning</span>
-<span class="font-label-caps text-[9px]">Wardrobe</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../digital_wardrobe/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">checkroom</span>
+<span class="font-label-caps text-label-caps mt-1">Wardrobe</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../ai_stylist_chat/code.html">
-<span class="material-symbols-outlined mb-1 text-[22px]">smart_toy</span>
-<span class="font-label-caps text-[9px]">Stylist</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../ai_stylist_chat/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1">Stylist</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-all w-16 h-14" href="../styling_by_occasion/code.html">
-<span class="material-symbols-outlined mb-1 text-[22px]">checkroom</span>
-<span class="font-label-caps text-[9px]">Outfits</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../styling_by_occasion/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+<span class="font-label-caps text-label-caps mt-1">Outfits</span>
 </a>
-<!-- Active Tab: Profile (Maps to Insights conceptually) -->
-<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-cream-container dark:bg-primary-container rounded-full px-4 py-1.5 hover:text-secondary dark:hover:text-secondary-fixed transition-all scale-95 duration-200 min-w-[64px] h-14" href="../style_insights/code.html">
-<span class="material-symbols-outlined mb-0.5 text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span>
-<span class="font-label-caps text-[9px] font-bold">Profile</span>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container/10 rounded-full py-1 px-3 scale-90 transition-all duration-200" href="../style_insights/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
 </a>
 </nav>
 <!-- Safe area padding for iOS devices -->
