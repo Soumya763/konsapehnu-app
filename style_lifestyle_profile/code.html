@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Konsa Pehnu - Preferences &amp; Lifestyle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#fcf9f2",
+                      "on-secondary": "#ffffff",
+                      "sandstone": "#c9c4b9",
+                      "primary": "#5c051d",
+                      "surface-variant": "#e5e2db",
+                      "on-surface": "#1c1c18",
+                      "surface-bright": "#fcf9f2",
+                      "secondary-container": "#feb064",
+                      "emerald-match": "#0b6e4f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1c1c18",
+                      "cream-container": "#f3eee4",
+                      "on-primary": "#ffffff",
+                      "secondary": "#b8752e",
+                      "indigo-slate": "#243746",
+                      "primary-container": "#7a1f32",
+                      "outline": "#887173",
+                      "on-surface-variant": "#554243",
+                      "on-primary-container": "#ff8b9b",
+                      "surface-container": "#f0eee7",
+                      "surface": "#fcf9f2",
+                      "outline-variant": "#dbc0c2",
+                      "ink": "#3E2723",
+                      "hairline": "#d8d0c2"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "margin-mobile": "5vw",
+                      "unit": "4px",
+                      "margin-desktop": "5vw",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "gutter": "20px",
+                      "2xl": "48px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "body-lead": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-base": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "label-caps": ["Inter"],
+                      "title-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lead": ["18px", {"lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-base": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.4px", "fontWeight": "600"}],
+                      "headline-md": ["25px", {"lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600"}],
+                      "label-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600"}],
+                      "title-md": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .jali-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3.33333L36.6667 20L20 36.6667L3.33333 20L20 3.33333ZM20 6.66667L6.66667 20L20 33.3333L33.3333 20L20 6.66667Z' fill='%23c9c4b9' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .shimmer-btn { position: relative; overflow: hidden; }
+        .shimmer-btn:hover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 1s forwards;
+        }
+        @keyframes shimmer { 100% { left: 200%; } }
+        .style-card { transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease; }
+        .style-card:hover { transform: translateY(-2px); }
+        .style-card.selected { border-color: #b8752e; background: #f3eee4; }
+        .style-card.selected .check { opacity: 1; transform: scale(1); }
+        .check { opacity: 0; transform: scale(0.6); transition: opacity 0.2s ease, transform 0.2s ease; }
+        .chip-card { transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
+        .chip-card.selected { border-color: #b8752e; background: #7a1f32; color: #ffffff; }
+        .swatch-card { transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease; }
+        .swatch-card:hover { transform: translateY(-2px); }
+        .swatch-card.selected { border-color: #b8752e; background: #f3eee4; }
+        .swatch-card.selected .check { opacity: 1; transform: scale(1); }
+        .field-focus:focus-within {
+            border-color: #b8752e;
+            box-shadow: 0 0 0 3px rgba(139, 80, 7, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative pb-safe">
+
+<!-- Header: Back + Progress -->
+<header class="sticky top-0 z-20 bg-surface/90 backdrop-blur-md border-b border-hairline">
+<div class="flex items-center justify-between px-margin-mobile h-16 max-w-md mx-auto">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../body_fit_profile/code.html">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 4 of 4</span>
+<div class="w-6"></div>
+</div>
+<div class="h-1 bg-hairline max-w-md mx-auto">
+<div class="h-1 bg-primary-container" style="width: 100%;"></div>
+</div>
+</header>
+
+<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col gap-xl">
+
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">A few final touches</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">This rounds out your profile so Konsa can shop your wardrobe like a stylist would.</p>
+</div>
+
+<!-- Color Palette -->
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Colors you gravitate towards</h2>
+<div class="grid grid-cols-2 gap-md" role="group" aria-label="Color palette preferences">
+
+<label class="swatch-card cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#8a6d3b;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#c9c4b9;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#3E2723;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Neutrals &amp; Earth Tones</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+<label class="swatch-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input checked="" class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#5c051d;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#243746;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#0b6e4f;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Jewel Tones</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+<label class="swatch-card cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#f3eee4;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#ffd9dc;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#ffdcbf;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Pastels &amp; Light Hues</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+<label class="swatch-card cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#1c1c18;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#887173;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#ffffff;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Monochrome</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+<label class="swatch-card cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#cc5527;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#feb064;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#792400;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Bold &amp; Bright</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+<label class="swatch-card cursor-pointer relative border border-hairline rounded-xl p-md flex items-center gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="colors" type="checkbox"/>
+<span class="flex -space-x-1.5 flex-shrink-0">
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#b8752e;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#764200;"></span>
+<span class="w-5 h-5 rounded-full border border-hairline" style="background:#feb064;"></span>
+</span>
+<span class="font-title-md text-[14px] text-ink">Metallics &amp; Festive</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
+</label>
+
+</div>
+</div>
+
+<!-- Occasions -->
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">What do you dress for most?</h2>
+<div class="flex flex-wrap gap-sm" role="group" aria-label="Occasions">
+<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input checked="" class="sr-only" name="occasions" type="checkbox"/>
+                    Work &amp; Office
+                </label>
+<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input checked="" class="sr-only" name="occasions" type="checkbox"/>
+                    Casual Everyday
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="occasions" type="checkbox"/>
+                    Wedding &amp; Festive
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="occasions" type="checkbox"/>
+                    Date Night
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="occasions" type="checkbox"/>
+                    Travel
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="occasions" type="checkbox"/>
+                    Gym &amp; Athleisure
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="occasions" type="checkbox"/>
+                    Formal Events
+                </label>
+</div>
+</div>
+
+<!-- Lifestyle -->
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Which best describes your lifestyle?</h2>
+<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Lifestyle">
+
+<label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input checked="" class="sr-only" name="lifestyle" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">business_center</span>
+<span class="font-title-md text-[15px] text-ink">Corporate 9-5</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="lifestyle" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">palette</span>
+<span class="font-title-md text-[15px] text-ink">Creative / Startup</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="lifestyle" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">school</span>
+<span class="font-title-md text-[15px] text-ink">Student</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="lifestyle" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">work</span>
+<span class="font-title-md text-[15px] text-ink">Business Owner</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+</div>
+</div>
+
+<!-- Sizing -->
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Sizing (helps us pre-fill your wardrobe)</h2>
+<div class="grid grid-cols-3 gap-sm">
+<div>
+<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="shirt-size">Shirt</label>
+<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
+<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="shirt-size" name="shirt-size">
+<option>S</option>
+<option>M</option>
+<option selected="">L</option>
+<option>XL</option>
+<option>XXL</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="waist-size">Waist</label>
+<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
+<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="waist-size" name="waist-size">
+<option>30"</option>
+<option>32"</option>
+<option selected="">34"</option>
+<option>36"</option>
+<option>38"</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="shoe-size">Shoe (UK)</label>
+<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
+<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="shoe-size" name="shoe-size">
+<option>7</option>
+<option>8</option>
+<option selected="">9</option>
+<option>10</option>
+<option>11</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+
+<div class="flex gap-md mt-md">
+<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../body_fit_profile/code.html">
+                Back
+            </a>
+<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../today_s_look/code.html">
+                Finish
+            </a>
+</div>
+
+</main>
+
+<script>
+    document.querySelectorAll('.style-card input, .swatch-card input').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            const card = event.target.closest('.style-card, .swatch-card');
+            if (event.target.type === 'radio') {
+                const group = event.target.closest('[role="radiogroup"]');
+                group.querySelectorAll('.style-card').forEach((c) => c.classList.toggle('selected', c === card));
+            } else {
+                card.classList.toggle('selected', event.target.checked);
+            }
+        });
+    });
+    document.querySelectorAll('.chip-card input').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            event.target.closest('.chip-card').classList.toggle('selected', event.target.checked);
+        });
+    });
+</script>
+
+</body></html>
