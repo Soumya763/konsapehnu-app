@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Konsa Pehnu - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#fcf9f2",
+                      "on-secondary": "#ffffff",
+                      "sandstone": "#c9c4b9",
+                      "primary": "#5c051d",
+                      "surface-variant": "#e5e2db",
+                      "on-surface": "#1c1c18",
+                      "surface-bright": "#fcf9f2",
+                      "secondary-container": "#feb064",
+                      "emerald-match": "#0b6e4f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1c1c18",
+                      "cream-container": "#f3eee4",
+                      "on-primary": "#ffffff",
+                      "secondary": "#8b5007",
+                      "indigo-slate": "#243746",
+                      "primary-container": "#7a1f32",
+                      "outline": "#887173",
+                      "on-surface-variant": "#554243",
+                      "on-primary-container": "#ff8b9b",
+                      "surface-container": "#f0eee7",
+                      "surface": "#fcf9f2",
+                      "outline-variant": "#dbc0c2",
+                      "ink": "#3E2723",
+                      "hairline": "#d8d0c2"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "margin-mobile": "5vw",
+                      "unit": "4px",
+                      "margin-desktop": "5vw",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "gutter": "20px",
+                      "2xl": "48px",
+                      "sm": "8px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "body-lead": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-base": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "label-caps": ["Inter"],
+                      "title-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lead": ["18px", {"lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-base": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["30px", {"lineHeight": "1.15", "letterSpacing": "-0.4px", "fontWeight": "600"}],
+                      "headline-md": ["25px", {"lineHeight": "1.12", "letterSpacing": "-0.3px", "fontWeight": "600"}],
+                      "label-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "2px", "fontWeight": "600"}],
+                      "title-md": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .jali-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3.33333L36.6667 20L20 36.6667L3.33333 20L20 3.33333ZM20 6.66667L6.66667 20L20 33.3333L33.3333 20L20 6.66667Z' fill='%23c9c4b9' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .shimmer-btn { position: relative; overflow: hidden; }
+        .shimmer-btn:hover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 1s forwards;
+        }
+        @keyframes shimmer { 100% { left: 200%; } }
+        .snap-track { scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .snap-track::-webkit-scrollbar { display: none; }
+        .snap-panel { scroll-snap-align: center; }
+        .dot { transition: background-color 0.25s ease, width 0.25s ease; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative overflow-hidden">
+
+<!-- Skip -->
+<a class="absolute top-lg right-margin-mobile z-20 font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors uppercase" href="../today_s_look/code.html">
+        Skip
+    </a>
+
+<!-- Panels -->
+<div class="snap-track flex-1 flex overflow-x-auto" id="track">
+
+<section class="snap-panel w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-2xl gap-lg">
+<div class="w-24 h-24 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 44px;">checkroom</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Your wardrobe,<br/> understood.</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-[280px] mx-auto">Snap photos of your clothes. Konsa builds your digital closet automatically — no manual tagging.</p>
+</div>
+</section>
+
+<section class="snap-panel w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-2xl gap-lg">
+<div class="w-24 h-24 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 44px;">auto_awesome</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Styled by AI,<br/> made for you.</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-[280px] mx-auto">Get outfit suggestions tailored to your style, your wardrobe, and the weather.</p>
+</div>
+</section>
+
+<section class="snap-panel w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-2xl gap-lg">
+<div class="w-24 h-24 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 44px;">celebration</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Every occasion,<br/> covered.</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-[280px] mx-auto">From weddings to the weekday grind — always know exactly what to wear.</p>
+</div>
+</section>
+
+</div>
+
+<!-- Dots + CTA -->
+<div class="px-margin-mobile pb-2xl pt-lg flex flex-col items-center gap-lg">
+<div class="flex items-center gap-2" id="dots">
+<span class="dot w-6 h-2 rounded-full bg-primary-container" data-index="0"></span>
+<span class="dot w-2 h-2 rounded-full bg-hairline" data-index="1"></span>
+<span class="dot w-2 h-2 rounded-full bg-hairline" data-index="2"></span>
+</div>
+<a class="shimmer-btn w-full max-w-[320px] bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../questionnaire/code.html">
+            Get Started
+        </a>
+</div>
+
+<script>
+    const track = document.getElementById('track');
+    const dots = Array.from(document.querySelectorAll('#dots .dot'));
+    const panels = Array.from(document.querySelectorAll('.snap-panel'));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const index = panels.indexOf(entry.target);
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove('w-2', 'bg-hairline');
+                        dot.classList.add('w-6', 'bg-primary-container');
+                    } else {
+                        dot.classList.remove('w-6', 'bg-primary-container');
+                        dot.classList.add('w-2', 'bg-hairline');
+                    }
+                });
+            }
+        });
+    }, { root: track, threshold: 0.6 });
+
+    panels.forEach((panel) => observer.observe(panel));
+</script>
+
+</body></html>

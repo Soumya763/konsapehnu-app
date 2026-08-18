@@ -156,9 +156,12 @@
 <button aria-label="Menu" class="hover:opacity-80 transition-opacity flex items-center justify-center">
 <span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="menu">menu</span>
 </button>
-<h1 class="font-display-lg-mobile text-headline-lg-mobile dark:text-inverse-primary font-display-lg-mobile italic text-secondary dark:text-secondary-fixed-dim text-center flex-1">
+<div class="text-center flex-1">
+<h1 class="font-display-lg-mobile text-headline-lg-mobile dark:text-inverse-primary font-display-lg-mobile italic text-secondary dark:text-secondary-fixed-dim">
             Konsa Pehnu
         </h1>
+<p class="font-label-caps text-[9px] tracking-widest uppercase text-on-surface-variant -mt-1">AI Stylist · Not a human stylist</p>
+</div>
 <button aria-label="Profile" class="hover:opacity-80 transition-opacity w-8 h-8 rounded-full overflow-hidden border border-hairline flex items-center justify-center bg-cream-container">
 <img alt="User Avatar" class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of a modern Indian man with neat facial hair, wearing a subtly textured ivory linen shirt. The lighting is warm and natural, casting soft shadows that highlight the premium, tactile nature of the fabric. The background is a minimalist, slightly out-of-focus unbleached cotton canvas, enhancing the high-end editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPZTKfTpVSmBcr1PhGjPDszAGBlB2vm9GhknQo1m10C-icrpnGw2qprKqZRBOYnFZ6smZdIiFZWwK7qW7E788XnKN3zj3HdQriOdgXiW_6IrLNWBbVPhzcu-OsWgHx_UwLOZCxb48wEDlePFgMJpkz9VlYhXNFHlvSHPsLZ1ifHl3eX3_OuQOTfAcU9xuj7EHVGIlhbzjbdYL8eoyp3huuDNtsC7lYn-GFF4NLAdV8GfnUBg0oWLl5"/>
 </button>
@@ -231,6 +234,19 @@
 <span class="font-label-caps text-label-caps">98% Match</span>
 </div>
 </div>
+</div>
+<!-- AI Response Feedback -->
+<div class="flex items-center gap-1 pl-1">
+<button aria-label="Regenerate response" class="flex items-center gap-1 px-2 py-1.5 rounded-full text-on-surface-variant hover:text-secondary hover:bg-cream-container transition-colors">
+<span class="material-symbols-outlined" data-icon="refresh" style="font-size: 15px;">refresh</span>
+<span class="font-label-caps text-[10px] tracking-wide">Regenerate</span>
+</button>
+<button aria-label="Good response" class="p-2 rounded-full text-on-surface-variant hover:text-emerald-match hover:bg-cream-container transition-colors">
+<span class="material-symbols-outlined" style="font-size: 15px;">thumb_up</span>
+</button>
+<button aria-label="Poor response" class="p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-cream-container transition-colors">
+<span class="material-symbols-outlined" style="font-size: 15px;">thumb_down</span>
+</button>
 </div>
 </div>
 </div>
