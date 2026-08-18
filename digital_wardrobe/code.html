@@ -181,7 +181,7 @@
 <button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors">ETHNIC</button>
 </section>
 <!-- Wardrobe Grid -->
-<section class="px-margin-mobile grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-md md:gap-lg">
+<section class="px-margin-mobile grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-md md:gap-lg" id="wardrobe-grid">
 <!-- Item 1 -->
 <a class="group cursor-pointer block" href="../placeholder/code.html?title=Crisp%20Linen%20Shirt&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
@@ -241,7 +241,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Bottoms • Olive</p>
 </a>
 <!-- Item 6 -->
-<a class="group cursor-pointer block" href="../wardrobe_setup/code.html">
+<a class="group cursor-pointer block" href="../wardrobe_setup/code.html" id="add-new-item-tile">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative flex items-center justify-center">
 <div class="w-16 h-16 rounded-full border border-dashed border-outline-variant flex items-center justify-center text-outline group-hover:text-primary transition-colors">
 <span class="material-symbols-outlined" data-icon="add">add</span>
@@ -274,4 +274,34 @@
 <span class="font-label-caps text-label-caps mt-1">Profile</span>
 </a>
 </nav>
+<script>
+    (function () {
+        var STORAGE_KEY = 'konsapehnu_wardrobe_items';
+        var items = [];
+        try {
+            items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        } catch (e) {
+            items = [];
+        }
+        if (!items.length) { return; }
+
+        var grid = document.getElementById('wardrobe-grid');
+        var addTile = document.getElementById('add-new-item-tile');
+
+        items.forEach(function (item) {
+            var card = document.createElement('a');
+            card.className = 'group cursor-pointer block';
+            card.href = '../placeholder/code.html?title=' + encodeURIComponent(item.name) +
+                '&desc=' + encodeURIComponent('Full item details, wear history, and styling suggestions are coming soon.') +
+                '&icon=checkroom&back=..%2Fdigital_wardrobe%2Fcode.html';
+            card.innerHTML =
+                '<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">' +
+                '<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="' + item.img + '"/>' +
+                '</div>' +
+                '<h3 class="font-title-md text-title-md text-on-surface leading-tight">' + item.name + '</h3>' +
+                '<p class="font-body-sm text-body-sm text-on-surface-variant">' + item.category + ' • ' + item.color + '</p>';
+            grid.insertBefore(card, addTile);
+        });
+    })();
+</script>
 </body></html>

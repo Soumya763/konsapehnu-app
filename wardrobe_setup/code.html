@@ -168,20 +168,21 @@
 <p class="font-body-base text-body-base text-on-surface-variant">Snap a photo or upload from your gallery to let our AI tailor your collection.</p>
 </div>
 <!-- Main Action Area (Upload/Camera) -->
-<div class="bg-cream-container border border-hairline rounded-xl p-lg flex flex-col items-center justify-center gap-md min-h-[200px] lift-hover cursor-pointer relative overflow-hidden group">
+<div class="bg-cream-container border border-hairline rounded-xl p-lg flex flex-col items-center justify-center gap-md min-h-[200px] lift-hover cursor-pointer relative overflow-hidden group" id="upload-trigger">
 <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border border-sandstone group-hover:border-secondary transition-colors">
 <span class="material-symbols-outlined text-[32px] text-ink group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">add_a_photo</span>
 </div>
-<p class="font-title-md text-title-md text-ink">Tap to Snap or Upload</p>
+<p class="font-title-md text-title-md text-ink" id="upload-trigger-label">Tap to Snap or Upload</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">JPEG, PNG up to 10MB</p>
 </div>
+<input accept="image/*" capture="environment" class="hidden" id="item-photo-input" type="file"/>
 <!-- Recent Upload Preview (Processing State) -->
 <div class="relative bg-surface rounded-xl border border-hairline p-md shadow-sm">
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Processing Item 01</h2>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md" id="processing-title">Processing Item 01</h2>
 <div class="flex gap-md">
 <!-- Image Preview with Scanning Effect -->
 <div class="w-24 h-32 bg-surface-container-high rounded-lg relative overflow-hidden flex-shrink-0 border border-sandstone">
-<img alt="Uploading Kurta" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A high-quality, softly lit photograph of a beautiful saffron-colored linen Kurta hanging against a neutral background. The fabric texture is clearly visible, evoking a luxurious, editorial feel suitable for a premium modern Indian menswear app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIzOHpFB4FB1GXPxnGNtp7wM-duqIZ302Z3fZVJs5_l1wkLcDpybo6C8tpD9iyHd6vPY1kXDRdRNQNcomcZeLR8K87FfKxVDDigpPhhn1QTD1hP6vzqL4HjPv2KFWTOnSkP6nj4zJlP9ab9ikt9nthWBw_7BX7ihz7CH5-MkkLaKDt7zHiUAUz7cW7KRMw5C1NDtKUblhDDe5aqrKIzmn8Qsg6dGtgHSHmqXmxuAyvA_e8wzRs8c0x"/>
+<img alt="Uploading Kurta" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A high-quality, softly lit photograph of a beautiful saffron-colored linen Kurta hanging against a neutral background. The fabric texture is clearly visible, evoking a luxurious, editorial feel suitable for a premium modern Indian menswear app." id="preview-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIzOHpFB4FB1GXPxnGNtp7wM-duqIZ302Z3fZVJs5_l1wkLcDpybo6C8tpD9iyHd6vPY1kXDRdRNQNcomcZeLR8K87FfKxVDDigpPhhn1QTD1hP6vzqL4HjPv2KFWTOnSkP6nj4zJlP9ab9ikt9nthWBw_7BX7ihz7CH5-MkkLaKDt7zHiUAUz7cW7KRMw5C1NDtKUblhDDe5aqrKIzmn8Qsg6dGtgHSHmqXmxuAyvA_e8wzRs8c0x"/>
 <!-- Scanner Animation Overlay -->
 <div class="absolute inset-0 scanner-beam"></div>
 <div class="absolute inset-0 border-2 border-secondary/30 rounded-lg"></div>
@@ -215,7 +216,7 @@
 </div>
 <!-- Action Buttons -->
 <div class="mt-auto pt-lg">
-<a class="w-full bg-primary text-on-primary font-title-md text-title-md py-4 rounded-full relative overflow-hidden shimmer-btn transition-colors hover:bg-gradient-to-r hover:from-primary hover:to-[#b8752e] flex items-center justify-center" href="../digital_wardrobe/code.html">
+<a class="w-full bg-primary text-on-primary font-title-md text-title-md py-4 rounded-full relative overflow-hidden shimmer-btn transition-colors hover:bg-gradient-to-r hover:from-primary hover:to-[#b8752e] flex items-center justify-center" href="../digital_wardrobe/code.html" id="confirm-btn">
                  Confirm Details
              </a>
 <div class="text-center mt-md">
@@ -225,4 +226,60 @@
 </div>
 </div>
 </main>
+<script>
+    (function () {
+        var fileInput = document.getElementById('item-photo-input');
+        var trigger = document.getElementById('upload-trigger');
+        var previewImg = document.getElementById('preview-img');
+        var triggerLabel = document.getElementById('upload-trigger-label');
+        var processingTitle = document.getElementById('processing-title');
+        var confirmBtn = document.getElementById('confirm-btn');
+        var pendingImage = null;
+        var pendingFileName = null;
+
+        trigger.addEventListener('click', function () {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function (event) {
+            var file = event.target.files && event.target.files[0];
+            if (!file) { return; }
+            pendingFileName = file.name;
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                pendingImage = e.target.result;
+                previewImg.src = pendingImage;
+                previewImg.classList.remove('opacity-80', 'mix-blend-multiply');
+                triggerLabel.textContent = 'Photo Selected — Tap to Change';
+                processingTitle.textContent = 'Ready to Add';
+            };
+            reader.readAsDataURL(file);
+        });
+
+        confirmBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            var STORAGE_KEY = 'konsapehnu_wardrobe_items';
+            var existing = [];
+            try {
+                existing = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            } catch (e) {
+                existing = [];
+            }
+            var newItem = {
+                id: 'local-' + Date.now(),
+                name: pendingFileName ? 'New Item — ' + pendingFileName.replace(/\.[^/.]+$/, '') : 'Unbleached Linen Kurta',
+                category: 'Ethnic',
+                color: 'Saffron',
+                img: pendingImage || previewImg.src
+            };
+            existing.push(newItem);
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+            } catch (e) {
+                /* storage unavailable; continue without persisting */
+            }
+            window.location.href = '../digital_wardrobe/code.html';
+        });
+    })();
+</script>
 </body></html>

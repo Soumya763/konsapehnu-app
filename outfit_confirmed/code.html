@@ -3,10 +3,9 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Today's Outfit</title>
+<title>Konsa Pehnu - Look Locked In</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -122,54 +121,31 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
-        
-        .shimmer-btn {
-            position: relative;
-            overflow: hidden;
-        }
+        .shimmer-btn { position: relative; overflow: hidden; }
         .shimmer-btn::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%; width: 200%; height: 200%;
             background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%);
             transform: rotate(45deg);
             transition: all 0.5s ease;
             opacity: 0;
         }
-        .shimmer-btn:hover::after {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-        
-        .editorial-shadow {
-            box-shadow: 0 4px 24px rgba(168, 137, 82, 0.15);
-        }
-        
-        /* Custom scrollbar for horizontal lists */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .shimmer-btn:hover::after { opacity: 1; transform: rotate(45deg) translate(50%, 50%); }
+        @keyframes pop-in { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .pop-in { animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col md:flex-row relative">
 <!-- Mobile TopAppBar -->
 <header class="md:hidden bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky shadow-sm z-50 flex justify-between items-center px-margin-mobile h-16 w-full">
-<a aria-label="Menu" class="text-on-surface-variant hover:opacity-80 transition-opacity" href="../menu/code.html">
-<span class="material-symbols-outlined">menu</span>
+<a aria-label="Back" class="text-on-surface-variant hover:opacity-80 transition-opacity" href="../today_s_look/code.html">
+<span class="material-symbols-outlined">arrow_back</span>
 </a>
 <h1 class="font-display-lg text-[32px] italic text-secondary">Konsa Pehnu</h1>
-<a aria-label="Profile" class="text-on-surface-variant hover:opacity-80 transition-opacity" href="../style_insights/code.html">
-<span class="material-symbols-outlined">account_circle</span>
-</a>
+<div class="w-6"></div>
 </header>
-<!-- Desktop SideNav (Derived from TopAppBar intent + BottomNavBar items for Web) -->
+<!-- Desktop SideNav -->
 <nav class="hidden md:flex flex-col w-64 bg-surface/90 border-r border-hairline h-screen sticky top-0 py-8 px-6 z-40">
 <div class="mb-12">
 <h1 class="font-display-lg text-[32px] italic text-secondary">Konsa Pehnu</h1>
@@ -207,80 +183,32 @@
             </a>
 </div>
 </nav>
-<!-- Main Content Canvas -->
-<main class="flex-1 pb-[90px] md:pb-0">
-<!-- Hero Section -->
-<section class="px-margin-mobile md:px-margin-desktop py-xl md:py-2xl max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row gap-lg md:gap-2xl items-start">
-<!-- Left: Curated Image -->
-<div class="w-full md:w-[55%] relative group">
-<div class="rounded-xl overflow-hidden editorial-shadow bg-cream-container border border-hairline relative aspect-[3/4] w-full">
-<img alt="Curated Outfit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end editorial fashion photograph of a contemporary Indian menswear outfit. The look features a crisp, light unbleached linen kurta paired perfectly with tailored, tapered trousers in a muted sandstone hue. The styling is minimalist and luxurious, suggesting effortless elegance. Soft, warm natural light filters through, creating subtle shadows and highlighting the tactile textures of the breathable fabrics. The background is a clean, neutral studio setting in warm ivory tones, reflecting a modern Sartorial Journal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDhZQJpNUMwiOM_9aiTqS2dG03u3KHZa_5DTu9LRcw8cAg5zxtrQL_IZ_92bJhneDLGrj8zyYT3Ql8i_ZX4Zj3A3-jVQh_E4MvhejjxM3JiOO_7EZ7q6SufyKQSViE8ULegOI3k3CyR3Dx-BkkayZtXB2KHLE3bQHN6MUdBK50MHw21L36yl8Y7h7iKSuO7P94geoGVa7HsuxDGcpBNpeX2BEi3AT8O3-v8-Xp_tDXstsK9lwVSUQX"/>
-<!-- Weather Badge Overlay -->
-<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2 border border-hairline shadow-sm">
-<span class="material-symbols-outlined text-secondary text-[20px]">light_mode</span>
-<span class="font-label-caps text-label-caps text-ink">28°C MUMBAI</span>
-</div>
-<!-- Match Score Overlay -->
-<div class="absolute bottom-4 right-4 bg-emerald-match text-white rounded-full px-4 py-2 flex items-center gap-2 shadow-md">
-<span class="material-symbols-outlined text-[16px]">check_circle</span>
-<span class="font-label-caps text-label-caps">98% MATCH</span>
-</div>
-</div>
-</div>
-<!-- Right: Details & Actions -->
-<div class="w-full md:w-[45%] flex flex-col gap-xl sticky top-24">
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Good Morning, Arjun</p>
-<span class="w-1 h-1 rounded-full bg-hairline"></span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Smart Casual</span>
-</div>
-<h2 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-ink">Today's Look</h2>
-<p class="font-body-lead text-body-lead text-on-surface-variant border-l-2 border-secondary pl-4">
-                            Curated for a sunny 28°C Mumbai afternoon. This combination balances breathable textures with sharp tailoring, ideal for both casual meetings and elevated lounging.
-                        </p>
-</div>
-<!-- Components Breakdown -->
-<div class="space-y-4">
-<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest border-b border-hairline pb-2">Outfit Elements</h3>
-<div class="grid grid-cols-1 gap-4">
-<!-- Item 1 -->
-<a class="flex items-center gap-4 p-3 rounded-lg border border-hairline bg-cream-container hover:-translate-y-1 transition-transform duration-300" href="../placeholder/code.html?title=Unbleached%20Linen%20Kurta&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Ftoday_s_look%2Fcode.html">
-<div class="w-16 h-16 rounded bg-surface border border-hairline overflow-hidden flex-shrink-0">
-<img alt="Linen Kurta" class="w-full h-full object-cover" data-alt="A flat lay product shot of a premium unbleached linen kurta. The fabric shows subtle slub textures and a soft, natural drape. It features a clean mandarin collar and minimal placket. The lighting is soft and even, set against a pristine, warm paper-toned background to emphasize the luxurious, organic nature of the garment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm1kYwkRNUhIJQg1jYJU7WDo34XMBQ3mWU5LpyaxQbAWLejmcazlhI0pZKXhOywsWDzcr9n-q7ypQAToR7Y0rFbIB6aMtZSalP84RqCHGk4DOtoromJYMg249UQV_YvzUKnWv_JU3oaSt4aSuHoJO1ZW-bT2i9njwaaHgPY8Gc8_hnjLnDuIyt3GH_WvtktGKesQX2E8x4ZrjrvJcvHAKZqBdYopkWzTD7QxjaG7C_OArOqKYemlX2"/>
+<!-- Main Content -->
+<main class="flex-1 flex items-center justify-center px-margin-mobile py-3xl pb-[90px] md:pb-3xl">
+<div class="w-full max-w-md flex flex-col items-center text-center gap-lg">
+<div class="pop-in w-20 h-20 rounded-full bg-emerald-match/10 border border-emerald-match/30 flex items-center justify-center text-emerald-match">
+<span class="material-symbols-outlined" style="font-size: 40px;">check_circle</span>
 </div>
 <div>
-<p class="font-title-md text-title-md text-ink">Unbleached Linen Kurta</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Wardrobe Item #042</p>
+<h2 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-ink mb-sm">Look Locked In</h2>
+<p class="font-body-lead text-body-lead text-on-surface-variant" id="confirm-desc">
+                    Your outfit is set for today. Have a great day, Arjun.
+                </p>
 </div>
-</a>
-<!-- Item 2 -->
-<a class="flex items-center gap-4 p-3 rounded-lg border border-hairline bg-cream-container hover:-translate-y-1 transition-transform duration-300" href="../placeholder/code.html?title=Sandstone%20Tailored%20Trousers&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Ftoday_s_look%2Fcode.html">
-<div class="w-16 h-16 rounded bg-surface border border-hairline overflow-hidden flex-shrink-0">
-<img alt="Tailored Trousers" class="w-full h-full object-cover" data-alt="A flat lay product shot of tailored men's trousers in a sophisticated sandstone color. The pants feature a sharp front crease, tab closure, and a clean modern cut. Photographed beautifully against a warm, neutral background with subtle, high-end editorial lighting that highlights the weave of the fine fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBcxtGuzVTxcgNyXO5yRVF7qxL_ZKAinZrkuZcE0zXvOo6b505ootc0bXJQhnAi-eVvqdgMVjPjBv2fC_kIbSMnKfTGBzKGymS5H8JV2x8pXU6AhnxAnpHmdsnjujAdqF9P8ek0R5gDalWIL0kQMwh0PK5pVagpxRyynCoy6fh7Y7BRJXZL3DEFbOg5aNOI6avekOlOrKknn6IsEKkerFTVRDNlCmf7CPN9Z_AfD74JY-V9yVLTMh"/>
-</div>
-<div>
-<p class="font-title-md text-title-md text-ink">Sandstone Tailored Trousers</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Wardrobe Item #118</p>
-</div>
-</a>
-</div>
-</div>
-<!-- Actions -->
-<div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-hairline">
-<a class="shimmer-btn flex-1 bg-primary-container text-white font-title-md text-title-md py-4 px-8 rounded-full shadow-md hover:bg-primary transition-colors flex items-center justify-center gap-2" href="../outfit_confirmed/code.html?name=Smart%20Casual%20Edit">
+<div class="w-full bg-cream-container border border-hairline rounded-xl p-lg flex items-center gap-4 text-left">
+<div class="w-14 h-14 rounded-full bg-surface border border-hairline flex items-center justify-center text-primary-container flex-shrink-0">
 <span class="material-symbols-outlined">checkroom</span>
-                            Wear This
-                        </a>
-<a class="flex-1 bg-transparent border border-ink text-ink font-title-md text-title-md py-4 px-8 rounded-full hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center gap-2" href="../outfit_alternate/code.html">
-<span class="material-symbols-outlined">shuffle</span>
-                            Shuffle Outfit
-                        </a>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-xs">Worn Today</p>
+<p class="font-title-md text-title-md text-ink" id="confirm-name">Smart Casual Edit</p>
 </div>
 </div>
+<a class="shimmer-btn w-full bg-primary-container text-white font-title-md text-title-md py-4 px-8 rounded-full shadow-md hover:bg-primary transition-colors flex items-center justify-center gap-2" href="../today_s_look/code.html">
+<span class="material-symbols-outlined">home_app_logo</span>
+                Back to Home
+            </a>
 </div>
-</section>
 </main>
 <!-- Mobile BottomNavBar -->
 <nav class="md:hidden bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe rounded-t-xl">
@@ -305,4 +233,14 @@
 <span class="font-label-caps text-label-caps mt-1">Profile</span>
 </a>
 </nav>
+<script>
+    (function () {
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        if (name) {
+            document.getElementById('confirm-name').textContent = name;
+            document.getElementById('confirm-desc').textContent = name + ' is set as today\'s outfit. Have a great day, Arjun.';
+        }
+    })();
+</script>
 </body></html>
