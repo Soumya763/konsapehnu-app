@@ -173,17 +173,17 @@
 </div>
 </section>
 <!-- Filter Chips -->
-<section class="px-margin-mobile pb-lg overflow-x-auto no-scrollbar flex gap-sm">
-<button class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-ink text-on-primary shrink-0 transition-colors">ALL ITEMS</button>
-<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors">TOPS</button>
-<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors">BOTTOMS</button>
-<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors">FOOTWEAR</button>
-<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors">ETHNIC</button>
+<section class="px-margin-mobile pb-lg overflow-x-auto no-scrollbar flex gap-sm" id="filter-chips">
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-ink text-on-primary shrink-0 transition-colors" data-filter="all">ALL ITEMS</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors" data-filter="tops">TOPS</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors" data-filter="bottoms">BOTTOMS</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors" data-filter="footwear">FOOTWEAR</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-sandstone text-on-surface-variant hover:bg-surface-container-high shrink-0 transition-colors" data-filter="ethnic">ETHNIC</button>
 </section>
 <!-- Wardrobe Grid -->
 <section class="px-margin-mobile grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-md md:gap-lg" id="wardrobe-grid">
 <!-- Item 1 -->
-<a class="group cursor-pointer block" href="../placeholder/code.html?title=Crisp%20Linen%20Shirt&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<a class="group cursor-pointer block" data-category="tops" href="../placeholder/code.html?title=Crisp%20Linen%20Shirt&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
 <img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="A meticulously styled flat lay of a crisp white linen men's shirt on a softly textured, unbleached cotton background. Warm, natural side lighting creates subtle, elegant shadows. High-resolution editorial photography, minimalist and tactile luxury aesthetic. Deep blacks and pristine whites with subtle warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSwbRwpjQ9cJOTPipiDjpk55xHokabE4K_9pvCHuc56rUVH7sC-W1kNTvOasPXDwY_dlNVsC1zX57xtzeKJ3CS0aomyycqAj3xdrJ-VWbmpLT-gYYYMpTsrDaKAO-GWFoIwT76t3kL4fxqJ97augupOdt-T8DfmcwNUssqOiOFUcudG7HBzIoeTjeVEiBjSSgjDKv1GRlnFI1zHcuKrjYzVLwvin0s-xG_OiTjDSlQjLCLrR8ETact"/>
 <div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -194,7 +194,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Tops • White</p>
 </a>
 <!-- Item 2 -->
-<a class="group cursor-pointer block" href="../placeholder/code.html?title=Bespoke%20Blazer&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<a class="group cursor-pointer block" data-category="tops" href="../placeholder/code.html?title=Bespoke%20Blazer&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
 <img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="A high-end editorial photo of a dark maroon tailored men's blazer. The fabric texture is rich and visible. It rests on a pale ivory paper canvas surface. The lighting is dramatic yet soft, highlighting the craftsmanship. Indian-modern luxury style, minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8I0A1fNlAnTuvg3KAwE36Mi7kCMFO8DomaadDkPK44a0i5ErD8KXaN6SI7AJ-WIyu_EYsARw_wSnbpA-qxqQqc0KVINfWcjIttOSiRoz2VmpcGp91SLHTLMO6hZtx7LZs6Hfa1kqnGCWT_dtn35QSiJGNIovIihvmDhMKfCVod2SNjdigYzMllSB-G9UrznH0XJ88FB7MytcTQm6g5vR50sYnZ9m1oDaJHEkpOU4hhUOwz1HlJNM_"/>
 <div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -205,7 +205,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Tops • Maroon</p>
 </a>
 <!-- Item 3 -->
-<a class="group cursor-pointer block" href="../placeholder/code.html?title=Leather%20Oxfords&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<a class="group cursor-pointer block" data-category="footwear" href="../placeholder/code.html?title=Leather%20Oxfords&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
 <img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="A pair of impeccably polished tan leather men's oxfords photographed from a slightly elevated angle. They are placed on a warm sandstone-toned surface. Subtle Jali lattice shadow patterns fall softly in the background. High contrast, luxury editorial style, sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT8bQfmZ8zGDriUXDbMfZ9HgDjAs4xkt68SW3V_DXIon1KwKu2wx4Yv_ClEtt86K7RwII1NuYA-RnABNNiTukYgUYtCs56J0Hm9pj8gOFnyrJ6tMdTMogQr12Zk6TIDkE6Pb2gGKlyjYi81zzKSF3HF2XMZ9Mco1mhLM6T3Vz4QMpAwPo9EAHYVnLmkPw7W5r4DP1Z2T2_rlzKN_kdoeX2q8-HCVahoOOMPWeZhCkg9OH2KZ_YuCN3"/>
 <div class="absolute top-2 left-2">
@@ -219,7 +219,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Footwear • Tan</p>
 </a>
 <!-- Item 4 -->
-<a class="group cursor-pointer block" href="../placeholder/code.html?title=Embroidered%20Kurta&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<a class="group cursor-pointer block" data-category="ethnic" href="../placeholder/code.html?title=Embroidered%20Kurta&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
 <img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="A stunning, contemporary men's Kurta in a deep indigo shade with subtle gold thread embroidery. Flat lay on an unbleached paper-like surface. Warm, ambient lighting highlights the rich texture and drape of the fabric. Sophisticated Indian-modern design, clean and elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0JDbLPyoeWtxfeLUgdvWxE6dYVf8lq2Zr5JBN6Dlea1I0kXiNWOpv-wLaOxo5PP9e_o0YZ4Jiq7eLhB6X5Zz8YCeVGvttygMR4_jmpGuPun79HDOwF-_I0jsz4D_xpNyop4XyjDQG7ZhDQ37A0zCA2Bi4f3FwN1kVkJyELtD9PjY2_OtfM4k8REhSkwo3d13KbgW0lMwPAnzbRRjYXToo2A0sxGAyDKaqR-ZXoSSNE3UeE7c0XThn"/>
 <div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -230,7 +230,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Ethnic • Indigo</p>
 </a>
 <!-- Item 5 -->
-<a class="group cursor-pointer block" href="../placeholder/code.html?title=Linen%20Trousers&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<a class="group cursor-pointer block" data-category="bottoms" href="../placeholder/code.html?title=Linen%20Trousers&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
 <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
 <img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="A pair of perfectly tailored olive green linen trousers folded neatly. Photographed on a cream-colored textured background. Soft, diffused daylight emphasizes the natural weave of the fabric. Minimalist, premium aesthetic, focusing on tactile qualities and subtle tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoueDI13GM7BrIx8bWlCGcOzKOao037eP12hWfs1xtsNoz5gXp-r9_NA_FH5oFAkvDQRgy7fCsJipxhk6N7TJUbRE0m0nGn-iW5_gEDbEGX8_5z6LsqZRbhZYrIzqS-4czDpFBt8n7YGf7lAWVJmgIEM1JULNSGFu1aVrsjVw79275-O9vRCTpPv_9F0_vTkI7BtKvsSSZx5OClZw5ShA1gpb75BYrRV4oNOU_uFUz-Qqr6NrJwjWt"/>
 <div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -239,6 +239,61 @@
 </div>
 <h3 class="font-title-md text-title-md text-on-surface leading-tight">Linen Trousers</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Bottoms • Olive</p>
+</a>
+<!-- Item 7 -->
+<a class="group cursor-pointer block" data-category="ethnic" href="../placeholder/code.html?title=Unbleached%20Linen%20Kurta&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
+<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm1kYwkRNUhIJQg1jYJU7WDo34XMBQ3mWU5LpyaxQbAWLejmcazlhI0pZKXhOywsWDzcr9n-q7ypQAToR7Y0rFbIB6aMtZSalP84RqCHGk4DOtoromJYMg249UQV_YvzUKnWv_JU3oaSt4aSuHoJO1ZW-bT2i9njwaaHgPY8Gc8_hnjLnDuIyt3GH_WvtktGKesQX2E8x4ZrjrvJcvHAKZqBdYopkWzTD7QxjaG7C_OArOqKYemlX2"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Unbleached Linen Kurta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ethnic • Unbleached</p>
+</a>
+<!-- Item 8 -->
+<a class="group cursor-pointer block" data-category="bottoms" href="../placeholder/code.html?title=Sandstone%20Tailored%20Trousers&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
+<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBcxtGuzVTxcgNyXO5yRVF7qxL_ZKAinZrkuZcE0zXvOo6b505ootc0bXJQhnAi-eVvqdgMVjPjBv2fC_kIbSMnKfTGBzKGymS5H8JV2x8pXU6AhnxAnpHmdsnjujAdqF9P8ek0R5gDalWIL0kQMwh0PK5pVagpxRyynCoy6fh7Y7BRJXZL3DEFbOg5aNOI6avekOlOrKknn6IsEKkerFTVRDNlCmf7CPN9Z_AfD74JY-V9yVLTMh"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Sandstone Tailored Trousers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bottoms • Sandstone</p>
+</a>
+<!-- Item 9 -->
+<a class="group cursor-pointer block" data-category="bottoms" href="../placeholder/code.html?title=Navy%20Tailored%20Trousers&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
+<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fdxko6bgzj6f-W4C4pfsosg0IJg8_R6xRPnFI8gplt3GfGlaV6kANZQ2955eP8kfMMFk9fDZ6TQzroqWabcSROuXMZ4d3szIReZaPIpnQ04qiRSSRZsoJ5BrdC0o7gto1fqNtcXkYZvNbljB04P4zvY31-aW9TfgVgLmvc5V0HfyAA_FLK3IXZnDCzoGs9lpnlfx8XJ2h5vzkRnwkqWIZUImsDP1ayCQsr4dJLsqmxX5X7VSfLzj"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Navy Tailored Trousers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bottoms • Navy</p>
+</a>
+<!-- Item 10 -->
+<a class="group cursor-pointer block" data-category="footwear" href="../placeholder/code.html?title=Brown%20Oxford%20Shoes&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
+<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmTMl64kpXwuNF3eP0LZ82nGPmELUQw6JPmiJeONkElIFLndMHNlqf6g9L1MWF9OYnOD89Aig-5l95QXtRrlxOLN7Yw8ciWZoIMqViLwUv4sPonWHdKM_wgeW_9GhRPQ_J-OnFwS2NMg--roiWzffG23MjFB9UUTLK9qVKOWNKAARQyIcQs_qZAlKQ0bsAULDrc9KtmUnejSLS5zxk7axW9M3qaGxxVP6nob8EkOHQAQtjoOo6Ul5X"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Brown Oxford Shoes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Footwear • Brown</p>
+</a>
+<!-- Item 11 -->
+<a class="group cursor-pointer block" data-category="tops" href="../placeholder/code.html?title=Sage%20Knit%20Tee&amp;desc=Full%20item%20details%2C%20wear%20history%2C%20and%20styling%20suggestions%20are%20coming%20soon.&amp;icon=checkroom&amp;back=..%2Fdigital_wardrobe%2Fcode.html">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-container border border-hairline mb-xs relative">
+<img class="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjSe7JFhZe90b_uCNzCJAfK07IR5A3enK2ZCm9CyDYQnaEa89dVhHleBzioJKlOOzT7kBpw9AiM5falPYzPyt35K0o4MbIoHEfc6s0FVojYxDBspxaItCWwqBtKQlJPnM407rHPFIuQiqF5wkQxOPdoS8lHB3tfITuS-zetygjWk7afMf-biD_MmYdgDFU385PpMER4XSC0On-b7hlB6v8LOMQwdVFI9u1sWIaxfoJMd2dbALxvyLU"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Sage Knit Tee</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tops • Sage</p>
 </a>
 <!-- Item 6 -->
 <a class="group cursor-pointer block" href="../wardrobe_setup/code.html" id="add-new-item-tile">
@@ -291,6 +346,7 @@
         items.forEach(function (item) {
             var card = document.createElement('a');
             card.className = 'group cursor-pointer block';
+            card.dataset.category = (item.category || '').toLowerCase();
             card.href = '../placeholder/code.html?title=' + encodeURIComponent(item.name) +
                 '&desc=' + encodeURIComponent('Full item details, wear history, and styling suggestions are coming soon.') +
                 '&icon=checkroom&back=..%2Fdigital_wardrobe%2Fcode.html';
@@ -301,6 +357,30 @@
                 '<h3 class="font-title-md text-title-md text-on-surface leading-tight">' + item.name + '</h3>' +
                 '<p class="font-body-sm text-body-sm text-on-surface-variant">' + item.category + ' • ' + item.color + '</p>';
             grid.insertBefore(card, addTile);
+        });
+    })();
+</script>
+<script>
+    (function () {
+        var chipsWrap = document.getElementById('filter-chips');
+        chipsWrap.addEventListener('click', function (event) {
+            var btn = event.target.closest('button[data-filter]');
+            if (!btn) { return; }
+            var filter = btn.dataset.filter;
+
+            document.querySelectorAll('#filter-chips button').forEach(function (chip) {
+                var isActive = chip === btn;
+                chip.classList.toggle('bg-ink', isActive);
+                chip.classList.toggle('text-on-primary', isActive);
+                chip.classList.toggle('border', !isActive);
+                chip.classList.toggle('border-sandstone', !isActive);
+                chip.classList.toggle('text-on-surface-variant', !isActive);
+            });
+
+            document.querySelectorAll('#wardrobe-grid > a[data-category]').forEach(function (card) {
+                var show = filter === 'all' || card.dataset.category === filter;
+                card.classList.toggle('hidden', !show);
+            });
         });
     })();
 </script>

@@ -169,7 +169,7 @@
 <!-- Main Chat Canvas -->
 <main class="flex-1 flex flex-col overflow-hidden relative w-full max-w-[760px] mx-auto md:px-margin-desktop md:py-lg">
 <!-- Chat History Area -->
-<div class="flex-1 overflow-y-auto px-margin-mobile md:px-0 py-lg hide-scrollbar flex flex-col gap-lg pb-[120px] md:pb-2xl">
+<div class="flex-1 overflow-y-auto px-margin-mobile md:px-0 py-lg hide-scrollbar flex flex-col gap-lg pb-[120px] md:pb-2xl" id="chat-history">
 <!-- AI Welcome Message -->
 <div class="flex items-end gap-sm md:gap-md max-w-[85%]">
 <div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0 shadow-[0_2px_8px_rgba(168,137,82,0.08)]">
@@ -182,14 +182,14 @@
 </div>
 </div>
 <!-- Quick Reply Chips (Horizontal Scroll) -->
-<div class="flex gap-sm overflow-x-auto hide-scrollbar py-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 pl-[40px] md:pl-[48px] w-full max-w-[90%] snap-x">
-<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+<div class="flex gap-sm overflow-x-auto hide-scrollbar py-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 pl-[40px] md:pl-[48px] w-full max-w-[90%] snap-x" id="quick-replies">
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300" type="button">
                     What to wear for a Mehendi?
                 </button>
-<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300" type="button">
                     Style my blue blazer
                 </button>
-<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300">
+<button class="snap-start flex-shrink-0 border border-sandstone rounded-full px-4 py-2 font-body-sm text-body-sm text-on-surface-variant bg-surface hover:bg-ink hover:text-on-primary transition-colors duration-300" type="button">
                     Current trends
                 </button>
 </div>
@@ -250,8 +250,8 @@
 </div>
 </div>
 </div>
-<!-- Typing Indicator (Simulated) -->
-<div class="flex items-end gap-sm md:gap-md max-w-[85%] mt-4 opacity-70">
+<!-- Typing Indicator -->
+<div class="flex items-end gap-sm md:gap-md max-w-[85%] mt-4 opacity-70 hidden" id="typing-indicator">
 <div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0">
 <span class="font-display-lg text-body-base italic text-secondary">K</span>
 </div>
@@ -269,9 +269,9 @@
 <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
 </button>
 <div class="flex-1 relative">
-<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-base text-body-base text-on-surface py-2.5 placeholder:text-on-surface-variant/50 hide-scrollbar" placeholder="Ask Konsa..." rows="1" style="min-height: 44px; max-height: 120px;"></textarea>
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-base text-body-base text-on-surface py-2.5 placeholder:text-on-surface-variant/50 hide-scrollbar" id="chat-input" placeholder="Ask Konsa..." rows="1" style="min-height: 44px; max-height: 120px;"></textarea>
 </div>
-<button aria-label="Send message" class="bg-primary-container text-on-primary w-10 h-10 rounded-lg flex items-center justify-center shadow-md hover:-translate-y-0.5 transition-transform btn-shimmer flex-shrink-0 mb-0.5">
+<button aria-label="Send message" class="bg-primary-container text-on-primary w-10 h-10 rounded-lg flex items-center justify-center shadow-md hover:-translate-y-0.5 transition-transform btn-shimmer flex-shrink-0 mb-0.5" id="send-btn" type="button">
 <span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
 </button>
 </div>
@@ -302,7 +302,7 @@
 </nav>
 <script>
         // Simple auto-resize for textarea
-        const textarea = document.querySelector('textarea');
+        const textarea = document.getElementById('chat-input');
         textarea.addEventListener('input', function() {
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
@@ -310,5 +310,104 @@
                  this.style.height = '44px';
             }
         });
+
+        // Functional mock AI Stylist chat
+        (function () {
+            var history = document.getElementById('chat-history');
+            var typingIndicator = document.getElementById('typing-indicator');
+            var sendBtn = document.getElementById('send-btn');
+
+            function scrollToBottom() {
+                history.scrollTop = history.scrollHeight;
+            }
+
+            function appendUserMessage(text) {
+                var el = document.createElement('div');
+                el.className = 'flex items-end gap-sm md:gap-md self-end max-w-[85%] mt-4';
+                el.innerHTML =
+                    '<div class="bg-primary-container text-on-primary rounded-2xl rounded-br-sm px-4 py-3 shadow-[0_4px_12px_rgba(122,31,50,0.15)]">' +
+                    '<p class="font-body-base text-body-base"></p>' +
+                    '</div>';
+                el.querySelector('p').textContent = text;
+                history.insertBefore(el, typingIndicator);
+                scrollToBottom();
+            }
+
+            function appendAIMessage(text) {
+                var el = document.createElement('div');
+                el.className = 'flex items-end gap-sm md:gap-md max-w-[85%] mt-4';
+                el.innerHTML =
+                    '<div class="w-8 h-8 rounded-full bg-cream-container border border-hairline flex items-center justify-center flex-shrink-0 shadow-[0_2px_8px_rgba(168,137,82,0.08)]">' +
+                    '<span class="font-display-lg text-body-base italic text-secondary">K</span>' +
+                    '</div>' +
+                    '<div class="bg-cream-container border border-hairline text-on-surface rounded-2xl rounded-bl-sm px-4 py-3 shadow-[0_4px_12px_rgba(168,137,82,0.08)]">' +
+                    '<p class="font-body-base text-body-base"></p>' +
+                    '</div>';
+                el.querySelector('p').textContent = text;
+                history.insertBefore(el, typingIndicator);
+                scrollToBottom();
+            }
+
+            function generateMockReply(message) {
+                var text = message.toLowerCase();
+
+                if (text.indexOf('wedding') !== -1 || text.indexOf('mehendi') !== -1 || text.indexOf('shaadi') !== -1 || text.indexOf('sangeet') !== -1) {
+                    return 'For a celebration like that, lean into your festive pieces — the Embroidered Kurta pairs beautifully with the Sandstone Tailored Trousers. Add a pocket square for a little extra polish.';
+                }
+                if (text.indexOf('office') !== -1 || text.indexOf('work') !== -1 || text.indexOf('meeting') !== -1 || text.indexOf('interview') !== -1) {
+                    return 'For office or a meeting, the Bespoke Blazer over the Crisp Linen Shirt with Leather Oxfords keeps things sharp and confident without trying too hard.';
+                }
+                if (text.indexOf('date') !== -1 || text.indexOf('dinner') !== -1 || text.indexOf('evening') !== -1) {
+                    return 'For an evening out, try the Sage Knit Tee with the Navy Tailored Trousers — relaxed but still put-together, and it photographs beautifully in low light.';
+                }
+                if (text.indexOf('rain') !== -1 || text.indexOf('weather') !== -1 || text.indexOf('cold') !== -1 || text.indexOf('winter') !== -1) {
+                    return 'Given the weather, I\'d layer the Bespoke Blazer over a base layer and switch to the Brown Oxford Shoes — better grip and they still look sharp.';
+                }
+                if (text.indexOf('casual') !== -1 || text.indexOf('weekend') !== -1 || text.indexOf('travel') !== -1) {
+                    return 'Keep it easy — the Crisp Linen Shirt with Linen Trousers is breathable, low-effort, and still very much "you."';
+                }
+                if (text.indexOf('color') !== -1 || text.indexOf('colour') !== -1) {
+                    return 'As a rule of thumb: pair one grounded neutral (sandstone, ink, or ivory) with one accent tone. It keeps the look editorial rather than busy.';
+                }
+                if (text.indexOf('trend') !== -1) {
+                    return 'Right now, relaxed tailoring paired with tactile, natural fabrics like linen and raw silk is having a moment — a few pieces already in your wardrobe fit right in.';
+                }
+                return 'Based on what\'s in your wardrobe, I\'d suggest starting with the Crisp Linen Shirt as your base and building from there — tell me the occasion and I can get more specific.';
+            }
+
+            function sendMessage(text) {
+                var trimmed = (text || '').trim();
+                if (!trimmed) { return; }
+
+                appendUserMessage(trimmed);
+                textarea.value = '';
+                textarea.style.height = '44px';
+
+                typingIndicator.classList.remove('hidden');
+                scrollToBottom();
+
+                window.setTimeout(function () {
+                    typingIndicator.classList.add('hidden');
+                    appendAIMessage(generateMockReply(trimmed));
+                }, 900);
+            }
+
+            sendBtn.addEventListener('click', function () {
+                sendMessage(textarea.value);
+            });
+
+            textarea.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    sendMessage(textarea.value);
+                }
+            });
+
+            document.querySelectorAll('#quick-replies button').forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    sendMessage(chip.textContent.trim());
+                });
+            });
+        })();
     </script>
 </body></html>

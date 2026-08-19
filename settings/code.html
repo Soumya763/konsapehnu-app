@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Menu</title>
+<title>Konsa Pehnu - Settings</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -116,98 +116,142 @@
         }
         .menu-row { transition: background-color 0.2s ease; }
         .menu-row:hover { background-color: #f3eee4; }
-        .menu-row:hover .menu-chevron { transform: translateX(2px); }
-        .menu-chevron { transition: transform 0.2s ease; }
+        .toggle-track { width: 42px; height: 24px; border-radius: 999px; background: #dbc0c2; position: relative; transition: background-color 0.2s ease; flex-shrink: 0; }
+        .toggle-track.on { background: #7a1f32; }
+        .toggle-knob { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 999px; background: #ffffff; transition: transform 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .toggle-track.on .toggle-knob { transform: translateX(18px); }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative pb-safe">
 
 <header class="sticky top-0 z-20 bg-surface/80 backdrop-blur-md shadow-sm h-16 flex items-center justify-between px-margin-mobile w-full">
-<a aria-label="Close menu" class="text-on-surface-variant hover:text-secondary transition-colors" href="../today_s_look/code.html">
-<span class="material-symbols-outlined">close</span>
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../menu/code.html">
+<span class="material-symbols-outlined">arrow_back</span>
 </a>
-<h1 class="font-title-md text-title-md text-ink">Menu</h1>
+<h1 class="font-title-md text-title-md text-ink">Settings</h1>
 <div class="w-6"></div>
 </header>
 
 <main class="flex-1 max-w-md mx-auto w-full px-margin-mobile py-lg">
 
-<!-- Profile Summary -->
-<a class="flex items-center gap-md mb-xl border border-hairline rounded-xl p-md bg-surface-container-lowest hover:border-secondary transition-colors" href="../style_insights/code.html">
-<div class="w-12 h-12 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container flex-shrink-0">
-<span class="material-symbols-outlined">person</span>
-</div>
-<div class="flex-1">
-<p class="font-title-md text-title-md text-ink">Arjun Mehta</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">View your style profile</p>
-</div>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant">chevron_right</span>
-</a>
-
-<!-- Account & Wardrobe -->
+<!-- Account -->
 <div class="mb-lg">
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Account &amp; Wardrobe</h2>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Account</h2>
 <div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
-<a class="menu-row flex items-center gap-md p-md" href="../style_insights/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">bar_chart</span>
-<span class="font-body-base text-body-base text-ink flex-1">Style Insights</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Edit%20Profile&amp;desc=Update%20your%20name%2C%20photo%2C%20and%20personal%20details.&amp;icon=edit&amp;back=..%2Fsettings%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">edit</span>
+<span class="font-body-base text-body-base text-ink flex-1">Edit Profile</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
-<a class="menu-row flex items-center gap-md p-md" href="../digital_wardrobe/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">checkroom</span>
-<span class="font-body-base text-body-base text-ink flex-1">My Wardrobe</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Change%20Password&amp;desc=Update%20the%20password%20for%20your%20Konsa%20Pehnu%20account.&amp;icon=lock&amp;back=..%2Fsettings%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+<span class="font-body-base text-body-base text-ink flex-1">Change Password</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
-<a class="menu-row flex items-center gap-md p-md" href="../wardrobe_setup/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">add_a_photo</span>
-<span class="font-body-base text-body-base text-ink flex-1">Add New Item</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../saved_outfits/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">bookmark_border</span>
-<span class="font-body-base text-body-base text-ink flex-1">Saved Outfits</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../questionnaire/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">quiz</span>
-<span class="font-body-base text-body-base text-ink flex-1">Retake Style Quiz</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Linked%20Accounts&amp;desc=Manage%20accounts%20connected%20to%20Konsa%20Pehnu.&amp;icon=link&amp;back=..%2Fsettings%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">link</span>
+<span class="font-body-base text-body-base text-ink flex-1">Linked Accounts</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
 </div>
 </div>
 
-<!-- App -->
+<!-- Preferences -->
 <div class="mb-lg">
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">App</h2>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Preferences</h2>
 <div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
-<a class="menu-row flex items-center gap-md p-md" href="../notifications/code.html">
+<div class="flex items-center gap-md p-md">
 <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-<span class="font-body-base text-body-base text-ink flex-1">Notifications</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../settings/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">settings</span>
-<span class="font-body-base text-body-base text-ink flex-1">Settings</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../help_support/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
-<span class="font-body-base text-body-base text-ink flex-1">Help &amp; Support</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../about/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">info</span>
-<span class="font-body-base text-body-base text-ink flex-1">About Konsa Pehnu</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<span class="font-body-base text-body-base text-ink flex-1">Push Notifications</span>
+<button aria-pressed="true" class="toggle-track on" data-toggle="push-notifications" type="button">
+<span class="toggle-knob"></span>
+</button>
+</div>
+<div class="flex items-center gap-md p-md">
+<span class="material-symbols-outlined text-on-surface-variant">auto_awesome</span>
+<span class="font-body-base text-body-base text-ink flex-1">Styling Nudges</span>
+<button aria-pressed="true" class="toggle-track on" data-toggle="styling-nudges" type="button">
+<span class="toggle-knob"></span>
+</button>
+</div>
+<div class="flex items-center gap-md p-md">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="font-body-base text-body-base text-ink flex-1">Weekly Email Digest</span>
+<button aria-pressed="false" class="toggle-track" data-toggle="email-digest" type="button">
+<span class="toggle-knob"></span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Privacy -->
+<div class="mb-lg">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Privacy</h2>
+<div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
+<div class="flex items-center gap-md p-md">
+<span class="material-symbols-outlined text-on-surface-variant">query_stats</span>
+<span class="font-body-base text-body-base text-ink flex-1">Share Usage Data</span>
+<button aria-pressed="false" class="toggle-track" data-toggle="usage-data" type="button">
+<span class="toggle-knob"></span>
+</button>
+</div>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Privacy%20Policy&amp;desc=Read%20how%20Konsa%20Pehnu%20collects%20and%20uses%20your%20data.&amp;icon=privacy_tip&amp;back=..%2Fsettings%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">privacy_tip</span>
+<span class="font-body-base text-body-base text-ink flex-1">Privacy Policy</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
 </div>
 </div>
 
-<!-- Sign Out -->
-<a class="flex items-center justify-center gap-2 border border-hairline rounded-full py-3 font-title-md text-title-md text-primary hover:border-primary transition-colors" href="../login/code.html">
-<span class="material-symbols-outlined text-[18px]">logout</span>
-            Sign Out
-        </a>
+<!-- Account Actions -->
+<div class="mb-lg">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Account Actions</h2>
+<div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
+<a class="menu-row flex items-center gap-md p-md" href="../login/code.html">
+<span class="material-symbols-outlined text-on-surface-variant">logout</span>
+<span class="font-body-base text-body-base text-ink flex-1">Sign Out</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</a>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Delete%20Account&amp;desc=Account%20deletion%20is%20not%20yet%20available%20in%20this%20preview.&amp;icon=warning&amp;back=..%2Fsettings%2Fcode.html">
+<span class="material-symbols-outlined text-error">delete</span>
+<span class="font-body-base text-body-base text-error flex-1">Delete Account</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
 
 </main>
+
+<script>
+    (function () {
+        var STORAGE_KEY = 'konsapehnu_settings_toggles';
+        var saved = {};
+        try {
+            saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        } catch (e) {
+            saved = {};
+        }
+
+        document.querySelectorAll('[data-toggle]').forEach(function (btn) {
+            var key = btn.dataset.toggle;
+            if (Object.prototype.hasOwnProperty.call(saved, key)) {
+                var isOn = !!saved[key];
+                btn.classList.toggle('on', isOn);
+                btn.setAttribute('aria-pressed', String(isOn));
+            }
+            btn.addEventListener('click', function () {
+                var nowOn = !btn.classList.contains('on');
+                btn.classList.toggle('on', nowOn);
+                btn.setAttribute('aria-pressed', String(nowOn));
+                saved[key] = nowOn;
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                } catch (e) {
+                    /* storage unavailable */
+                }
+            });
+        });
+    })();
+</script>
+
 </body></html>

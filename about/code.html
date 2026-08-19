@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Menu</title>
+<title>Konsa Pehnu - About</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -116,98 +116,82 @@
         }
         .menu-row { transition: background-color 0.2s ease; }
         .menu-row:hover { background-color: #f3eee4; }
-        .menu-row:hover .menu-chevron { transform: translateX(2px); }
-        .menu-chevron { transition: transform 0.2s ease; }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative pb-safe">
 
 <header class="sticky top-0 z-20 bg-surface/80 backdrop-blur-md shadow-sm h-16 flex items-center justify-between px-margin-mobile w-full">
-<a aria-label="Close menu" class="text-on-surface-variant hover:text-secondary transition-colors" href="../today_s_look/code.html">
-<span class="material-symbols-outlined">close</span>
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../menu/code.html">
+<span class="material-symbols-outlined">arrow_back</span>
 </a>
-<h1 class="font-title-md text-title-md text-ink">Menu</h1>
+<h1 class="font-title-md text-title-md text-ink">About</h1>
 <div class="w-6"></div>
 </header>
 
 <main class="flex-1 max-w-md mx-auto w-full px-margin-mobile py-lg">
 
-<!-- Profile Summary -->
-<a class="flex items-center gap-md mb-xl border border-hairline rounded-xl p-md bg-surface-container-lowest hover:border-secondary transition-colors" href="../style_insights/code.html">
-<div class="w-12 h-12 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container flex-shrink-0">
-<span class="material-symbols-outlined">person</span>
+<div class="text-center mb-xl">
+<h2 class="font-display-lg text-[40px] italic text-secondary mb-xs">Konsa Pehnu<span class="not-italic">?</span></h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AI styling for the modern Indian man.</p>
 </div>
-<div class="flex-1">
-<p class="font-title-md text-title-md text-ink">Arjun Mehta</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">View your style profile</p>
-</div>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant">chevron_right</span>
-</a>
 
-<!-- Account & Wardrobe -->
+<!-- Our Story -->
 <div class="mb-lg">
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Account &amp; Wardrobe</h2>
-<div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
-<a class="menu-row flex items-center gap-md p-md" href="../style_insights/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">bar_chart</span>
-<span class="font-body-base text-body-base text-ink flex-1">Style Insights</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../digital_wardrobe/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">checkroom</span>
-<span class="font-body-base text-body-base text-ink flex-1">My Wardrobe</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../wardrobe_setup/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">add_a_photo</span>
-<span class="font-body-base text-body-base text-ink flex-1">Add New Item</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../saved_outfits/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">bookmark_border</span>
-<span class="font-body-base text-body-base text-ink flex-1">Saved Outfits</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../questionnaire/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">quiz</span>
-<span class="font-body-base text-body-base text-ink flex-1">Retake Style Quiz</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Our Story</h2>
+<div class="border border-hairline rounded-xl bg-surface-container-lowest p-md">
+<p class="font-body-base text-body-base text-on-surface-variant">
+                    Konsa Pehnu was born from a simple, everyday question every man asks himself: "What should I wear?"
+                    We set out to build a personal stylist that actually understands the modern Indian man's
+                    wardrobe — one that respects tradition, embraces contemporary fits, and takes the occasion
+                    and weather into account. Part digital wardrobe, part sartorial journal, Konsa Pehnu blends
+                    an editorial eye with everyday practicality, so getting dressed feels like a small daily
+                    ritual rather than a chore.
+                </p>
 </div>
 </div>
 
-<!-- App -->
+<!-- Version -->
 <div class="mb-lg">
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">App</h2>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Version Information</h2>
 <div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
-<a class="menu-row flex items-center gap-md p-md" href="../notifications/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-<span class="font-body-base text-body-base text-ink flex-1">Notifications</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<div class="flex items-center justify-between p-md">
+<span class="font-body-base text-body-base text-ink">App Version</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1.0.0 (Prototype)</span>
+</div>
+<div class="flex items-center justify-between p-md">
+<span class="font-body-base text-body-base text-ink">Build</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2026.08.19</span>
+</div>
+<div class="flex items-center justify-between p-md">
+<span class="font-body-base text-body-base text-ink">Platform</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Web</span>
+</div>
+</div>
+</div>
+
+<!-- Legal -->
+<div class="mb-lg">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-sm px-xs">Legal</h2>
+<div class="border border-hairline rounded-xl bg-surface-container-lowest overflow-hidden divide-y divide-hairline">
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Terms%20of%20Service&amp;desc=Full%20terms%20of%20service%20will%20be%20published%20here.&amp;icon=gavel&amp;back=..%2Fabout%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">gavel</span>
+<span class="font-body-base text-body-base text-ink flex-1">Terms of Service</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
-<a class="menu-row flex items-center gap-md p-md" href="../settings/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">settings</span>
-<span class="font-body-base text-body-base text-ink flex-1">Settings</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Privacy%20Policy&amp;desc=Full%20privacy%20policy%20will%20be%20published%20here.&amp;icon=privacy_tip&amp;back=..%2Fabout%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">privacy_tip</span>
+<span class="font-body-base text-body-base text-ink flex-1">Privacy Policy</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
-<a class="menu-row flex items-center gap-md p-md" href="../help_support/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
-<span class="font-body-base text-body-base text-ink flex-1">Help &amp; Support</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
-</a>
-<a class="menu-row flex items-center gap-md p-md" href="../about/code.html">
-<span class="material-symbols-outlined text-on-surface-variant">info</span>
-<span class="font-body-base text-body-base text-ink flex-1">About Konsa Pehnu</span>
-<span class="material-symbols-outlined menu-chevron text-on-surface-variant text-[18px]">chevron_right</span>
+<a class="menu-row flex items-center gap-md p-md" href="../placeholder/code.html?title=Open-Source%20Licenses&amp;desc=A%20list%20of%20third-party%20licenses%20used%20in%20this%20app.&amp;icon=description&amp;back=..%2Fabout%2Fcode.html">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+<span class="font-body-base text-body-base text-ink flex-1">Open-Source Licenses</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
 </a>
 </div>
 </div>
 
-<!-- Sign Out -->
-<a class="flex items-center justify-center gap-2 border border-hairline rounded-full py-3 font-title-md text-title-md text-primary hover:border-primary transition-colors" href="../login/code.html">
-<span class="material-symbols-outlined text-[18px]">logout</span>
-            Sign Out
-        </a>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-xl">Made with care for the modern Indian man.</p>
 
 </main>
 </body></html>
