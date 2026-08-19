@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Body &amp; Fit</title>
+<title>Konsa Pehnu - Wardrobe &amp; Shopping</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,165 +101,143 @@
 <!-- Header: Back + Progress -->
 <header class="sticky top-0 z-20 bg-surface/90 backdrop-blur-md border-b border-hairline">
 <div class="flex items-center justify-between px-margin-mobile h-16 max-w-md mx-auto">
-<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../questionnaire/code.html">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../sizing_profile/code.html">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 2 of 7</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 7 of 7</span>
 <div class="w-6"></div>
 </div>
 <div class="h-1 bg-hairline max-w-md mx-auto">
-<div class="h-1 bg-primary-container" style="width: 28.56%;"></div>
+<div class="h-1 bg-primary-container" style="width: 100%;"></div>
 </div>
 </header>
 
 <main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col gap-xl">
 
 <div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Tell us about your build</h1>
-<p class="font-body-base text-body-base text-on-surface-variant">This helps us recommend fits and proportions that actually flatter you.</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Last thing — your wardrobe habits</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">This helps Konsa shop, plan and prioritize like a stylist would.</p>
 </div>
 
-<!-- Height -->
+<!-- Budget -->
 <div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Height</h2>
-<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Height range">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Typical budget per piece</h2>
+<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Budget per piece">
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="height" type="radio"/>
-                    Under 5'4"
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="height" type="radio"/>
-                    5'4" – 5'8"
+<input class="sr-only" name="budget" type="radio"/>
+                    Under ₹1,500
                 </label>
 <label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input checked="" class="sr-only" name="height" type="radio"/>
-                    5'9" – 6'0"
+<input checked="" class="sr-only" name="budget" type="radio"/>
+                    ₹1,500 – ₹3,500
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="height" type="radio"/>
-                    6'1" &amp; Above
+<input class="sr-only" name="budget" type="radio"/>
+                    ₹3,500 – ₹7,000
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="budget" type="radio"/>
+                    ₹7,000+
                 </label>
 </div>
 </div>
 
-<!-- Build -->
+<!-- Shopping Frequency -->
 <div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Build</h2>
-<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Body build">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">How often do you shop for new clothes?</h2>
+<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Shopping frequency">
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="shop-frequency" type="radio"/>
+                    Every Few Weeks
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="shop-frequency" type="radio"/>
+                    Monthly
+                </label>
+<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input checked="" class="sr-only" name="shop-frequency" type="radio"/>
+                    Seasonally
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="shop-frequency" type="radio"/>
+                    Rarely — Fewer, Better Pieces
+                </label>
+</div>
+</div>
+
+<!-- Ethnic vs Western Balance -->
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Your wardrobe's natural balance</h2>
+<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Ethnic versus Western balance">
 
 <label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="build" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">straighten</span>
-<span class="font-title-md text-[15px] text-ink">Slim</span>
+<input class="sr-only" name="balance" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">checkroom</span>
+<span class="font-title-md text-[15px] text-ink">Mostly Western</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="balance" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">celebration</span>
+<span class="font-title-md text-[15px] text-ink">Mostly Ethnic</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 <label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input checked="" class="sr-only" name="build" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">fitness_center</span>
-<span class="font-title-md text-[15px] text-ink">Athletic</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="build" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">person</span>
-<span class="font-title-md text-[15px] text-ink">Regular</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="build" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">shield</span>
-<span class="font-title-md text-[15px] text-ink">Broad / Stocky</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-</div>
-</div>
-
-<!-- Fit Preference -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">How do you like your clothes to fit?</h2>
-<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Fit preference">
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="fit" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">compress</span>
-<span class="font-title-md text-[15px] text-ink">Slim Fit</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input checked="" class="sr-only" name="fit" type="radio"/>
+<input checked="" class="sr-only" name="balance" type="radio"/>
 <span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">balance</span>
-<span class="font-title-md text-[15px] text-ink">Regular Fit</span>
+<span class="font-title-md text-[15px] text-ink">Even Mix</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 <label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="fit" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">expand</span>
-<span class="font-title-md text-[15px] text-ink">Relaxed Fit</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="fit" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">crop_free</span>
-<span class="font-title-md text-[15px] text-ink">Oversized</span>
+<input class="sr-only" name="balance" type="radio"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">diversity_1</span>
+<span class="font-title-md text-[15px] text-ink">Fusion Pieces</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 </div>
 </div>
 
-<!-- Body Shape -->
+<!-- Fabric Preference -->
 <div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Which best describes your shape?</h2>
-<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Body shape">
-
-<label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input checked="" class="sr-only" name="shape" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">crop_portrait</span>
-<span class="font-title-md text-[15px] text-ink">Rectangle</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Balanced shoulders &amp; waist</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="shape" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">architecture</span>
-<span class="font-title-md text-[15px] text-ink">V-Taper</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Broader shoulders, narrow waist</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="shape" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">circle</span>
-<span class="font-title-md text-[15px] text-ink">Round</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Fuller through the middle</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="shape" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">change_history</span>
-<span class="font-title-md text-[15px] text-ink">Pear</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Narrower shoulders, fuller below</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
-</label>
-
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Fabrics you reach for</h2>
+<div class="flex flex-wrap gap-sm" role="group" aria-label="Fabric preference">
+<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input checked="" class="sr-only" name="fabric" type="checkbox"/>
+                    Cotton
+                </label>
+<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input checked="" class="sr-only" name="fabric" type="checkbox"/>
+                    Linen
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="fabric" type="checkbox"/>
+                    Silk
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="fabric" type="checkbox"/>
+                    Wool Blends
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="fabric" type="checkbox"/>
+                    Denim
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="fabric" type="checkbox"/>
+                    Performance / Blended
+                </label>
 </div>
 </div>
 
 <div class="flex gap-md mt-md">
-<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../questionnaire/code.html">
+<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../sizing_profile/code.html">
                 Back
             </a>
-<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../personal_profile/code.html">
-                Continue
+<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../today_s_look/code.html">
+                Finish
             </a>
 </div>
 
@@ -273,6 +251,11 @@
             input.addEventListener('change', () => {
                 cards.forEach((c) => c.classList.toggle('selected', c === card));
             });
+        });
+    });
+    document.querySelectorAll('[role="group"] .chip-card input').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            event.target.closest('.chip-card').classList.toggle('selected', event.target.checked);
         });
     });
 </script>
