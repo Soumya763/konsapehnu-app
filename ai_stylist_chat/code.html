@@ -150,7 +150,7 @@
         }
     </style>
 </head>
-<body class="bg-surface text-on-surface antialiased flex flex-col h-screen overflow-hidden pt-safe selection:bg-secondary-container selection:text-on-surface">
+<body class="bg-surface text-on-surface antialiased flex flex-col h-screen h-[100dvh] overflow-hidden pt-safe selection:bg-secondary-container selection:text-on-surface" id="chat-body">
 <!-- TopAppBar -->
 <header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky shadow-sm flex justify-between items-center px-margin-mobile h-16 w-full z-50 flex-shrink-0">
 <a aria-label="Menu" class="hover:opacity-80 transition-opacity flex items-center justify-center" href="../menu/code.html">
@@ -578,17 +578,34 @@
         // Keep the input bar clear of the mobile bottom nav, and of the
         // on-screen keyboard when it opens, without touching desktop layout.
         (function () {
+            var chatBody = document.getElementById('chat-body');
             var inputBar = document.getElementById('chat-input-bar');
             var bottomNav = document.getElementById('bottom-nav');
-            if (!inputBar || !bottomNav) { return; }
+            if (!chatBody || !inputBar || !bottomNav) { return; }
 
-            function positionInputBar() {
+            function trueViewportHeight() {
+                // visualViewport reflects the actually-visible area (excludes the
+                // browser's address/toolbar and shrinks when the keyboard opens),
+                // unlike 100vh/window.innerHeight which can be measured against the
+                // browser's tallest possible state and leave content stranded
+                // below the real, visible fold on mobile.
+                return window.visualViewport ? window.visualViewport.height : window.innerHeight;
+            }
+
+            function layoutForMobile() {
                 var navVisible = window.getComputedStyle(bottomNav).display !== 'none';
+
                 if (!navVisible) {
-                    // Desktop: let the existing md:bottom-lg utility govern position.
+                    // Desktop: leave height and position exactly as originally authored.
+                    chatBody.style.height = '';
                     inputBar.style.bottom = '';
                     return;
                 }
+
+                // Lock the app shell to the real visible height so nothing
+                // (including the absolutely-positioned input bar) ends up
+                // anchored below the actual screen.
+                chatBody.style.height = trueViewportHeight() + 'px';
 
                 var vv = window.visualViewport;
                 var keyboardInset = vv ? Math.max(0, window.innerHeight - vv.height - vv.offsetTop) : 0;
@@ -603,12 +620,12 @@
                 }
             }
 
-            positionInputBar();
-            window.addEventListener('resize', positionInputBar);
-            window.addEventListener('orientationchange', positionInputBar);
+            layoutForMobile();
+            window.addEventListener('resize', layoutForMobile);
+            window.addEventListener('orientationchange', layoutForMobile);
             if (window.visualViewport) {
-                window.visualViewport.addEventListener('resize', positionInputBar);
-                window.visualViewport.addEventListener('scroll', positionInputBar);
+                window.visualViewport.addEventListener('resize', layoutForMobile);
+                window.visualViewport.addEventListener('scroll', layoutForMobile);
             }
         })();
     </script>
