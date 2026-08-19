@@ -263,7 +263,7 @@
 </div>
 </div>
 <!-- Input Area (Fixed at bottom on mobile, absolute on desktop) -->
-<div class="absolute bottom-[60px] md:bottom-lg left-0 w-full px-margin-mobile md:px-0 pb-safe md:pb-0 bg-gradient-to-t from-surface via-surface/95 to-transparent pt-6 z-40">
+<div class="absolute bottom-20 md:bottom-lg left-0 w-full px-margin-mobile md:px-0 pb-safe md:pb-0 bg-gradient-to-t from-surface via-surface/95 to-transparent pt-6 z-40" id="chat-input-bar">
 <div class="bg-surface border border-hairline rounded-xl shadow-[0_-4px_24px_rgba(168,137,82,0.08)] p-2 flex items-end gap-2 input-focus-ring transition-all duration-300 mx-auto w-full">
 <button aria-label="Add item" class="p-2 text-on-surface-variant hover:text-secondary transition-colors">
 <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
@@ -278,7 +278,7 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl docked full-width bottom-0 fixed rounded-t-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe md:hidden">
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl docked full-width bottom-0 fixed rounded-t-xl border-t border-hairline dark:border-outline-variant shadow-[0_-4px_12px_rgba(168,137,82,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe md:hidden" id="bottom-nav">
 <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../today_s_look/code.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home_app_logo</span>
 <span class="font-label-caps text-label-caps mt-1">Home</span>
@@ -573,6 +573,43 @@
                     sendMessage(chip.textContent.trim());
                 });
             });
+        })();
+
+        // Keep the input bar clear of the mobile bottom nav, and of the
+        // on-screen keyboard when it opens, without touching desktop layout.
+        (function () {
+            var inputBar = document.getElementById('chat-input-bar');
+            var bottomNav = document.getElementById('bottom-nav');
+            if (!inputBar || !bottomNav) { return; }
+
+            function positionInputBar() {
+                var navVisible = window.getComputedStyle(bottomNav).display !== 'none';
+                if (!navVisible) {
+                    // Desktop: let the existing md:bottom-lg utility govern position.
+                    inputBar.style.bottom = '';
+                    return;
+                }
+
+                var vv = window.visualViewport;
+                var keyboardInset = vv ? Math.max(0, window.innerHeight - vv.height - vv.offsetTop) : 0;
+
+                if (keyboardInset > 60) {
+                    // On-screen keyboard is open: sit just above it.
+                    inputBar.style.bottom = (keyboardInset + 8) + 'px';
+                } else {
+                    // Normal state: sit just above the real, measured nav height.
+                    var navHeight = bottomNav.getBoundingClientRect().height;
+                    inputBar.style.bottom = (navHeight + 8) + 'px';
+                }
+            }
+
+            positionInputBar();
+            window.addEventListener('resize', positionInputBar);
+            window.addEventListener('orientationchange', positionInputBar);
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', positionInputBar);
+                window.visualViewport.addEventListener('scroll', positionInputBar);
+            }
         })();
     </script>
 </body></html>
