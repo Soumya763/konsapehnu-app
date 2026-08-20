@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Lifestyle</title>
+<title>Konsa Pehnu - Your Goals</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -92,8 +92,6 @@
         .style-card.selected { border-color: #b8752e; background: #f3eee4; }
         .style-card.selected .check { opacity: 1; transform: scale(1); }
         .check { opacity: 0; transform: scale(0.6); transition: opacity 0.2s ease, transform 0.2s ease; }
-        .chip-card { transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
-        .chip-card.selected { border-color: #b8752e; background: #7a1f32; color: #ffffff; }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative pb-safe">
@@ -101,118 +99,89 @@
 <!-- Header: Back + Progress -->
 <header class="sticky top-0 z-20 bg-surface/90 backdrop-blur-md border-b border-hairline">
 <div class="flex items-center justify-between px-margin-mobile h-16 max-w-md mx-auto">
-<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../color_occasion_profile/code.html">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../notification_permission/code.html">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 5 of 7</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 2 of 11</span>
 <div class="w-6"></div>
 </div>
 <div class="h-1 bg-hairline max-w-md mx-auto">
-<div class="h-1 bg-primary-container" style="width: 71.4%;"></div>
+<div class="h-1 bg-primary-container" style="width: 18.18%;"></div>
 </div>
 </header>
 
-<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col gap-xl">
+<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col">
 
-<div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Your day-to-day</h1>
-<p class="font-body-base text-body-base text-on-surface-variant">How you spend your week shapes how often you'll wear each piece.</p>
+<div class="mb-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">What would you love Konsa Pehnu to help you with?</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Pick as many as apply.</p>
 </div>
 
-<!-- Lifestyle -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Which best describes your lifestyle?</h2>
-<div class="grid grid-cols-2 gap-md" role="radiogroup" aria-label="Lifestyle">
+<div class="grid grid-cols-2 gap-md flex-1" role="group" aria-label="Goals">
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">auto_awesome</span>
+<span class="font-title-md text-[15px] text-ink">Upgrade my style</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
 
 <label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input checked="" class="sr-only" name="lifestyle" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">business_center</span>
-<span class="font-title-md text-[15px] text-ink">Corporate 9-5</span>
+<input checked="" class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">lightbulb</span>
+<span class="font-title-md text-[15px] text-ink">Get outfit inspo</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 <label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="lifestyle" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">palette</span>
-<span class="font-title-md text-[15px] text-ink">Creative / Startup</span>
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">checkroom</span>
+<span class="font-title-md text-[15px] text-ink">Organize my wardrobe</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 <label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="lifestyle" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">school</span>
-<span class="font-title-md text-[15px] text-ink">Student</span>
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">calendar_month</span>
+<span class="font-title-md text-[15px] text-ink">Schedule outfits</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input checked="" class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">schedule</span>
+<span class="font-title-md text-[15px] text-ink">Save time getting dressed</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 <label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
-<input class="sr-only" name="lifestyle" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">work</span>
-<span class="font-title-md text-[15px] text-ink">Business Owner</span>
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">bar_chart</span>
+<span class="font-title-md text-[15px] text-ink">Track wardrobe stats</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest col-span-2">
-<input class="sr-only" name="lifestyle" type="radio"/>
-<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">laptop_mac</span>
-<span class="font-title-md text-[15px] text-ink">Freelancer / Remote</span>
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">shopping_bag</span>
+<span class="font-title-md text-[15px] text-ink">Shop smarter</span>
+<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
+</label>
+
+<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col gap-sm bg-surface-container-lowest">
+<input class="sr-only" name="goals" type="checkbox"/>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 26px;">explore</span>
+<span class="font-title-md text-[15px] text-ink">Just curious</span>
 <span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 18px;">check_circle</span>
 </label>
 
 </div>
-</div>
 
-<!-- Dress-up Frequency -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">How often do you dress up?</h2>
-<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Dress-up frequency">
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="dress-up" type="radio"/>
-                    Mostly Casual
-                </label>
-<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input checked="" class="sr-only" name="dress-up" type="radio"/>
-                    Balanced Mix
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="dress-up" type="radio"/>
-                    Mostly Dressed-Up
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="dress-up" type="radio"/>
-                    Depends on the Day
-                </label>
-</div>
-</div>
-
-<!-- Activity Level -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Which sounds most like your week?</h2>
-<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Activity level">
-<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input checked="" class="sr-only" name="activity" type="radio"/>
-                    Desk-Based
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="activity" type="radio"/>
-                    On My Feet Often
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="activity" type="radio"/>
-                    Frequent Travel
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="activity" type="radio"/>
-                    A Mix of Everything
-                </label>
-</div>
-</div>
-
-<div class="flex gap-md mt-md">
-<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../color_occasion_profile/code.html">
+<div class="flex gap-md mt-xl">
+<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../notification_permission/code.html">
                 Back
             </a>
-<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../sizing_profile/code.html">
+<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../plan_ahead_intro/code.html" id="continue-btn">
                 Continue
             </a>
 </div>
@@ -220,14 +189,21 @@
 </main>
 
 <script>
-    document.querySelectorAll('[role="radiogroup"]').forEach((group) => {
-        const cards = Array.from(group.querySelectorAll('.style-card, .chip-card'));
-        cards.forEach((card) => {
-            const input = card.querySelector('input');
-            input.addEventListener('change', () => {
-                cards.forEach((c) => c.classList.toggle('selected', c === card));
-            });
+    document.querySelectorAll('.style-card input').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            event.target.closest('.style-card').classList.toggle('selected', event.target.checked);
         });
+    });
+
+    document.getElementById('continue-btn').addEventListener('click', function () {
+        var selected = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(function (input) {
+            return input.closest('.style-card').querySelector('.font-title-md').textContent;
+        });
+        var STORAGE_KEY = 'konsapehnu_onboarding';
+        var data = {};
+        try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { data = {}; }
+        data.goals = selected;
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { /* storage unavailable */ }
     });
 </script>
 

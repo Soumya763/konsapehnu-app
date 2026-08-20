@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - Sizing</title>
+<title>Konsa Pehnu - Your Birthday</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -98,117 +98,53 @@
 <!-- Header: Back + Progress -->
 <header class="sticky top-0 z-20 bg-surface/90 backdrop-blur-md border-b border-hairline">
 <div class="flex items-center justify-between px-margin-mobile h-16 max-w-md mx-auto">
-<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../lifestyle_profile/code.html">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../discovery_source/code.html">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 6 of 7</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 7 of 11</span>
 <div class="w-6"></div>
 </div>
 <div class="h-1 bg-hairline max-w-md mx-auto">
-<div class="h-1 bg-primary-container" style="width: 85.68%;"></div>
+<div class="h-1 bg-primary-container" style="width: 63.63%;"></div>
 </div>
 </header>
 
-<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col gap-xl">
+<main class="flex-1 px-margin-mobile pt-2xl pb-2xl max-w-md mx-auto w-full flex flex-col items-center text-center gap-lg">
+
+<div class="w-20 h-20 rounded-full bg-cream-container border border-hairline flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 40px;">cake</span>
+</div>
 
 <div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">Get the sizing right</h1>
-<p class="font-body-base text-body-base text-on-surface-variant">So every recommendation — Western or ethnic — actually fits.</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">When's your birthday?</h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-[320px] mx-auto">So we can surprise you with something special every year.</p>
 </div>
 
-<!-- Western Sizing -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Western wear</h2>
-<div class="grid grid-cols-3 gap-sm">
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="shirt-size">Shirt</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="shirt-size" name="shirt-size">
-<option>S</option>
-<option>M</option>
-<option selected="">L</option>
-<option>XL</option>
-<option>XXL</option>
-</select>
-</div>
-</div>
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="jacket-size">Jacket</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="jacket-size" name="jacket-size">
-<option>36"</option>
-<option>38"</option>
-<option selected="">40"</option>
-<option>42"</option>
-<option>44"</option>
-</select>
-</div>
-</div>
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="waist-size">Waist</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="waist-size" name="waist-size">
-<option>30"</option>
-<option>32"</option>
-<option selected="">34"</option>
-<option>36"</option>
-<option>38"</option>
-</select>
-</div>
-</div>
+<div class="w-full text-left">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-xs" for="birthday">Date of Birth</label>
+<div class="field-focus border border-hairline rounded-lg bg-surface transition-all flex items-center px-3">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 20px;">calendar_today</span>
+<input class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="birthday" max="2015-01-01" min="1940-01-01" name="birthday" type="date"/>
 </div>
 </div>
 
-<!-- Ethnic & Footwear Sizing -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Ethnic wear &amp; footwear</h2>
-<div class="grid grid-cols-3 gap-sm">
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="kurta-size">Kurta</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="kurta-size" name="kurta-size">
-<option>S</option>
-<option>M</option>
-<option selected="">L</option>
-<option>XL</option>
-<option>XXL</option>
-</select>
-</div>
-</div>
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="inseam-length">Inseam</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="inseam-length" name="inseam-length">
-<option>Short (30")</option>
-<option selected="">Regular (32")</option>
-<option>Long (34")</option>
-</select>
-</div>
-</div>
-<div>
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-xs" for="shoe-size">Shoe (UK)</label>
-<div class="field-focus border border-hairline rounded-lg bg-surface transition-all">
-<select class="w-full bg-transparent border-none focus:ring-0 px-3 py-3 font-body-base text-body-base text-ink" id="shoe-size" name="shoe-size">
-<option>7</option>
-<option>8</option>
-<option selected="">9</option>
-<option>10</option>
-<option>11</option>
-</select>
-</div>
-</div>
-</div>
-</div>
-
-<div class="flex gap-md mt-md">
-<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../lifestyle_profile/code.html">
-                Back
-            </a>
-<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../wardrobe_preferences/code.html">
+<div class="w-full mt-auto pt-2xl">
+<a class="shimmer-btn w-full bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../wardrobe_analysis_intro/code.html" id="continue-btn">
                 Continue
             </a>
 </div>
 
 </main>
+
+<script>
+    document.getElementById('continue-btn').addEventListener('click', function () {
+        var value = document.getElementById('birthday').value;
+        var STORAGE_KEY = 'konsapehnu_onboarding';
+        var data = {};
+        try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { data = {}; }
+        data.birthday = value || null;
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { /* storage unavailable */ }
+    });
+</script>
 
 </body></html>

@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Konsa Pehnu - About You</title>
+<title>Konsa Pehnu - How You Found Us</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -87,11 +87,6 @@
             animation: shimmer 1s forwards;
         }
         @keyframes shimmer { 100% { left: 200%; } }
-        .style-card { transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease; }
-        .style-card:hover { transform: translateY(-2px); }
-        .style-card.selected { border-color: #b8752e; background: #f3eee4; }
-        .style-card.selected .check { opacity: 1; transform: scale(1); }
-        .check { opacity: 0; transform: scale(0.6); transition: opacity 0.2s ease, transform 0.2s ease; }
         .chip-card { transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
         .chip-card.selected { border-color: #b8752e; background: #7a1f32; color: #ffffff; }
     </style>
@@ -101,109 +96,68 @@
 <!-- Header: Back + Progress -->
 <header class="sticky top-0 z-20 bg-surface/90 backdrop-blur-md border-b border-hairline">
 <div class="flex items-center justify-between px-margin-mobile h-16 max-w-md mx-auto">
-<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../body_fit_profile/code.html">
+<a aria-label="Back" class="text-on-surface-variant hover:text-secondary transition-colors" href="../closet_size/code.html">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 3 of 7</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Step 6 of 11</span>
 <div class="w-6"></div>
 </div>
 <div class="h-1 bg-hairline max-w-md mx-auto">
-<div class="h-1 bg-primary-container" style="width: 42.84%;"></div>
+<div class="h-1 bg-primary-container" style="width: 54.54%;"></div>
 </div>
 </header>
 
-<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col gap-xl">
+<main class="flex-1 px-margin-mobile pt-xl pb-2xl max-w-md mx-auto w-full flex flex-col">
 
-<div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">A little about you</h1>
-<p class="font-body-base text-body-base text-on-surface-variant">A few personal details help us fine-tune colors and grooming-aware styling.</p>
+<div class="mb-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink mb-sm">How did you discover Konsa Pehnu?</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Just curious — helps us know where to say thanks.</p>
 </div>
 
-<!-- Age Range -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Age range</h2>
-<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Age range">
+<div class="flex flex-wrap gap-sm flex-1" role="radiogroup" aria-label="Discovery source">
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="age" type="radio"/>
-                    18–24
+<input class="sr-only" name="discovery" type="radio"/>
+                    Friends or Family
                 </label>
 <label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input checked="" class="sr-only" name="age" type="radio"/>
-                    25–34
+<input checked="" class="sr-only" name="discovery" type="radio"/>
+                    App Store / Google Play
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="age" type="radio"/>
-                    35–44
+<input class="sr-only" name="discovery" type="radio"/>
+                    Instagram
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="age" type="radio"/>
-                    45–54
+<input class="sr-only" name="discovery" type="radio"/>
+                    TikTok
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="age" type="radio"/>
-                    55+
-                </label>
-</div>
-</div>
-
-<!-- Skin Undertone -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Skin undertone</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant -mt-sm mb-md">Helps us suggest colors that genuinely flatter you.</p>
-<div class="grid grid-cols-3 gap-md" role="radiogroup" aria-label="Skin undertone">
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col items-center gap-sm bg-surface-container-lowest text-center">
-<input class="sr-only" name="undertone" type="radio"/>
-<span class="w-8 h-8 rounded-full border border-hairline" style="background: linear-gradient(135deg, #e6b877, #b8752e);"></span>
-<span class="font-title-md text-[14px] text-ink">Warm</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
-</label>
-
-<label class="style-card selected cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col items-center gap-sm bg-surface-container-lowest text-center">
-<input checked="" class="sr-only" name="undertone" type="radio"/>
-<span class="w-8 h-8 rounded-full border border-hairline" style="background: linear-gradient(135deg, #cbd6df, #556270);"></span>
-<span class="font-title-md text-[14px] text-ink">Cool</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
-</label>
-
-<label class="style-card cursor-pointer relative border border-hairline rounded-xl p-md flex flex-col items-center gap-sm bg-surface-container-lowest text-center">
-<input class="sr-only" name="undertone" type="radio"/>
-<span class="w-8 h-8 rounded-full border border-hairline" style="background: linear-gradient(135deg, #d9c7a3, #a9895f);"></span>
-<span class="font-title-md text-[14px] text-ink">Neutral</span>
-<span class="check absolute top-3 right-3 material-symbols-outlined text-emerald-match" style="font-size: 16px;">check_circle</span>
-</label>
-
-</div>
-</div>
-
-<!-- Grooming Style -->
-<div>
-<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">Grooming style</h2>
-<div class="flex flex-wrap gap-sm" role="radiogroup" aria-label="Grooming style">
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="grooming" type="radio"/>
-                    Clean Shaven
-                </label>
-<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input checked="" class="sr-only" name="grooming" type="radio"/>
-                    Stubble
+<input class="sr-only" name="discovery" type="radio"/>
+                    Facebook
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="grooming" type="radio"/>
-                    Full Beard
+<input class="sr-only" name="discovery" type="radio"/>
+                    ChatGPT / Gemini
                 </label>
 <label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
-<input class="sr-only" name="grooming" type="radio"/>
-                    Mustache
+<input class="sr-only" name="discovery" type="radio"/>
+                    Fashion Blogger / Influencer
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="discovery" type="radio"/>
+                    Online Search
+                </label>
+<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<input class="sr-only" name="discovery" type="radio"/>
+                    Other
                 </label>
 </div>
-</div>
 
-<div class="flex gap-md mt-md">
-<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../body_fit_profile/code.html">
+<div class="flex gap-md mt-xl">
+<a class="flex-1 border border-ink text-ink font-title-md text-title-md py-3.5 rounded-full text-center hover:border-secondary hover:text-secondary transition-colors" href="../closet_size/code.html">
                 Back
             </a>
-<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../color_occasion_profile/code.html">
+<a class="shimmer-btn flex-1 bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-full text-center hover:bg-primary transition-colors" href="../birthday_profile/code.html" id="continue-btn">
                 Continue
             </a>
 </div>
@@ -211,14 +165,21 @@
 </main>
 
 <script>
-    document.querySelectorAll('[role="radiogroup"]').forEach((group) => {
-        const cards = Array.from(group.querySelectorAll('.style-card, .chip-card'));
-        cards.forEach((card) => {
-            const input = card.querySelector('input');
-            input.addEventListener('change', () => {
-                cards.forEach((c) => c.classList.toggle('selected', c === card));
-            });
+    document.querySelectorAll('.chip-card input').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            document.querySelectorAll('.chip-card').forEach((c) => c.classList.remove('selected'));
+            event.target.closest('.chip-card').classList.add('selected');
         });
+    });
+
+    document.getElementById('continue-btn').addEventListener('click', function () {
+        var checked = document.querySelector('input[name="discovery"]:checked');
+        var value = checked ? checked.closest('.chip-card').textContent.trim() : null;
+        var STORAGE_KEY = 'konsapehnu_onboarding';
+        var data = {};
+        try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { data = {}; }
+        data.discoverySource = value;
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { /* storage unavailable */ }
     });
 </script>
 
