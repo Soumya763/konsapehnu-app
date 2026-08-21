@@ -87,8 +87,30 @@
             animation: shimmer 1s forwards;
         }
         @keyframes shimmer { 100% { left: 200%; } }
-        .chip-card { transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
-        .chip-card.selected { border-color: #b8752e; background: #7a1f32; color: #ffffff; }
+        .chip-card {
+            transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+        .chip-card .icon-badge {
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .chip-card .check-indicator {
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .chip-card.selected {
+            border-color: #7a1f32;
+            background: #7a1f32;
+            color: #ffffff;
+        }
+        .chip-card.selected .icon-badge {
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+        }
+        .chip-card.selected .check-indicator {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-base jali-pattern min-h-screen flex flex-col relative pb-safe">
@@ -114,43 +136,97 @@
 <p class="font-body-base text-body-base text-on-surface-variant">Just curious — helps us know where to say thanks.</p>
 </div>
 
-<div class="flex flex-wrap gap-sm flex-1" role="radiogroup" aria-label="Discovery source">
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<div class="flex flex-col gap-3 flex-1" role="radiogroup" aria-label="Discovery source">
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Friends or Family
-                </label>
-<label class="chip-card selected cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Friends or Family</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card selected cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input checked="" class="sr-only" name="discovery" type="radio"/>
-                    App Store / Google Play
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">install_mobile</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">App Store / Google Play</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Instagram
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Instagram</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    TikTok
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">music_note</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">TikTok</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Facebook
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Facebook</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    ChatGPT / Gemini
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">ChatGPT / Gemini</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Fashion Blogger / Influencer
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Fashion Blogger / Influencer</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Online Search
-                </label>
-<label class="chip-card cursor-pointer border border-hairline rounded-full px-4 py-2 bg-surface-container-lowest font-title-md text-[14px] text-ink">
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Online Search</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
+<label class="chip-card cursor-pointer flex items-center gap-md border border-hairline rounded-2xl px-md py-3 bg-surface-container-lowest">
 <input class="sr-only" name="discovery" type="radio"/>
-                    Other
-                </label>
+<span class="icon-badge shrink-0 w-10 h-10 rounded-xl bg-cream-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+<span class="option-label flex-1 font-title-md text-title-md text-left">Other</span>
+<span class="check-indicator shrink-0 w-6 h-6 rounded-full bg-white/90 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</label>
 </div>
 
 <div class="flex gap-md mt-xl">
@@ -174,7 +250,7 @@
 
     document.getElementById('continue-btn').addEventListener('click', function () {
         var checked = document.querySelector('input[name="discovery"]:checked');
-        var value = checked ? checked.closest('.chip-card').textContent.trim() : null;
+        var value = checked ? checked.closest('.chip-card').querySelector('.option-label').textContent.trim() : null;
         var STORAGE_KEY = 'konsapehnu_onboarding';
         var data = {};
         try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { data = {}; }
